@@ -1,0 +1,2883 @@
+
+USBKEY_STK525-series6-hidkbd.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  0000106c  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000ff8  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          0000001d  00800100  00800100  0000106c  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  0000106c  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  0000109c  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000298  00000000  00000000  000010dc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00002596  00000000  00000000  00001374  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000c5d  00000000  00000000  0000390a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00001438  00000000  00000000  00004567  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  000004d4  00000000  00000000  000059a0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000e78  00000000  00000000  00005e74  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000be7  00000000  00000000  00006cec  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000001f8  00000000  00000000  000078d3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 a2 00 	jmp	0x144	; 0x144 <__ctors_end>
+   4:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+   8:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+   c:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  10:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  14:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  18:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  1c:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  20:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  24:	0c 94 af 01 	jmp	0x35e	; 0x35e <__vector_9>
+  28:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  2c:	0c 94 d4 06 	jmp	0xda8	; 0xda8 <__vector_11>
+  30:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  34:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  38:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  3c:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  40:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  44:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  48:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  4c:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  50:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  54:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  58:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  5c:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  60:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  64:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  68:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  6c:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  70:	0c 94 bf 00 	jmp	0x17e	; 0x17e <__bad_interrupt>
+  74:	ff 05       	cpc	r31, r15
+  76:	7c 05       	cpc	r23, r12
+  78:	7b 06       	cpc	r7, r27
+  7a:	bb 05       	cpc	r27, r11
+  7c:	7b 06       	cpc	r7, r27
+  7e:	40 05       	cpc	r20, r0
+  80:	86 04       	cpc	r8, r6
+  82:	7b 06       	cpc	r7, r27
+  84:	1b 05       	cpc	r17, r11
+  86:	5f 05       	cpc	r21, r15
+  88:	34 06       	cpc	r3, r20
+  8a:	58 06       	cpc	r5, r24
+
+0000008c <__trampolines_end>:
+  8c:	26 25       	eor	r18, r6
+
+0000008d <usb_shieldup>:
+  8d:	25                                                  %
+
+0000008e <usb_shieldrear>:
+  8e:	24                                                  $
+
+0000008f <usb_shieldfront>:
+  8f:	23                                                  #
+
+00000090 <usb_shieldright>:
+  90:	22                                                  "
+
+00000091 <usb_shieldleft>:
+  91:	21                                                  !
+
+00000092 <usb_enginesincrease>:
+  92:	20                                                   
+
+00000093 <usb_shieldsincrease>:
+  93:	1f                                                  .
+
+00000094 <usb_weaponsincrease>:
+  94:	1e                                                  .
+
+00000095 <usb_hid_report_descriptor_kbd>:
+  95:	05 01 09 06 a1 01 05 07 19 e0 29 e7 15 00 25 01     ..........)...%.
+  a5:	75 01 95 08 81 02 95 01 75 08 81 01 95 05 75 01     u.......u.....u.
+  b5:	05 08 19 01 29 05 91 02 95 01 75 03 91 01 95 06     ....).....u.....
+  c5:	75 08 15 00 25 65 05 07 19 00 29 65 81 00 c0        u...%e....)e...
+
+000000d4 <usb_user_language_id>:
+  d4:	04 03 09 04                                         ....
+
+000000d8 <usb_user_product_string_descriptor>:
+  d8:	2c 03 41 00 56 00 52 00 20 00 55 00 53 00 42 00     ,.A.V.R. .U.S.B.
+  e8:	20 00 4b 00 45 00 59 00 42 00 4f 00 41 00 52 00      .K.E.Y.B.O.A.R.
+  f8:	44 00 20 00 44 00 45 00 4d 00 4f 00                 D. .D.E.M.O.
+
+00000104 <usb_user_manufacturer_string_descriptor>:
+ 104:	0c 03 41 00 54 00 4d 00 45 00 4c 00                 ..A.T.M.E.L.
+
+00000110 <usb_conf_desc>:
+ 110:	09 02 22 00 01 01 00 a0 32 09 04 00 00 01 03 01     ..".....2.......
+ 120:	01 00 09 21 11 01 00 01 22 3f 00 07 05 81 03 08     ...!...."?......
+ 130:	00 02                                               ..
+
+00000132 <usb_dev_desc>:
+ 132:	12 01 00 02 00 00 00 20 eb 03 17 20 00 10 01 02     ....... ... ....
+ 142:	00 01                                               ..
+
+00000144 <__ctors_end>:
+ 144:	11 24       	eor	r1, r1
+ 146:	1f be       	out	0x3f, r1	; 63
+ 148:	cf ef       	ldi	r28, 0xFF	; 255
+ 14a:	d4 e0       	ldi	r29, 0x04	; 4
+ 14c:	de bf       	out	0x3e, r29	; 62
+ 14e:	cd bf       	out	0x3d, r28	; 61
+
+00000150 <__low_level_init>:
+from 1 to 129. Thus, one does not need to use \c clock_div_t type as argument.
+*/
+void clock_prescale_set(clock_div_t __x)
+{
+    uint8_t __tmp = _BV(CLKPCE);
+    __asm__ __volatile__ (
+ 150:	20 e0       	ldi	r18, 0x00	; 0
+ 152:	30 e0       	ldi	r19, 0x00	; 0
+ 154:	80 e8       	ldi	r24, 0x80	; 128
+ 156:	0f b6       	in	r0, 0x3f	; 63
+ 158:	f8 94       	cli
+ 15a:	80 93 61 00 	sts	0x0061, r24
+ 15e:	20 93 61 00 	sts	0x0061, r18
+ 162:	0f be       	out	0x3f, r0	; 63
+#endif
+char __low_level_init()
+{
+  Clear_prescaler();
+  return 1;
+}
+ 164:	81 e0       	ldi	r24, 0x01	; 1
+
+00000166 <__do_clear_bss>:
+ 166:	21 e0       	ldi	r18, 0x01	; 1
+ 168:	a0 e0       	ldi	r26, 0x00	; 0
+ 16a:	b1 e0       	ldi	r27, 0x01	; 1
+ 16c:	01 c0       	rjmp	.+2      	; 0x170 <.do_clear_bss_start>
+
+0000016e <.do_clear_bss_loop>:
+ 16e:	1d 92       	st	X+, r1
+
+00000170 <.do_clear_bss_start>:
+ 170:	ad 31       	cpi	r26, 0x1D	; 29
+ 172:	b2 07       	cpc	r27, r18
+ 174:	e1 f7       	brne	.-8      	; 0x16e <.do_clear_bss_loop>
+ 176:	0e 94 f7 01 	call	0x3ee	; 0x3ee <main>
+ 17a:	0c 94 fa 07 	jmp	0xff4	; 0xff4 <_exit>
+
+0000017e <__bad_interrupt>:
+ 17e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000182 <keyboard_task_init>:
+
+//! This function initializes the hardware/software ressources required for keyboard task.
+//!
+void keyboard_task_init(void)
+{
+   transmit_no_key   = FALSE;
+ 182:	10 92 0f 01 	sts	0x010F, r1
+   key_hit           = FALSE;
+ 186:	10 92 0e 01 	sts	0x010E, r1
+   usb_kbd_state     = 0;
+ 18a:	10 92 0d 01 	sts	0x010D, r1
+   Power_Button_init();
+ 18e:	84 b1       	in	r24, 0x04	; 4
+ 190:	88 7f       	andi	r24, 0xF8	; 248
+ 192:	84 b9       	out	0x04, r24	; 4
+ 194:	85 b1       	in	r24, 0x05	; 5
+ 196:	87 60       	ori	r24, 0x07	; 7
+ 198:	85 b9       	out	0x05, r24	; 5
+   Shield_Button_init();   
+ 19a:	8a b1       	in	r24, 0x0a	; 10
+ 19c:	80 7c       	andi	r24, 0xC0	; 192
+ 19e:	8a b9       	out	0x0a, r24	; 10
+ 1a0:	8b b1       	in	r24, 0x0b	; 11
+ 1a2:	8f 63       	ori	r24, 0x3F	; 63
+ 1a4:	8b b9       	out	0x0b, r24	; 11
+   cpt_sof           = 0;
+ 1a6:	10 92 0b 01 	sts	0x010B, r1
+   Usb_enable_sof_interrupt();
+ 1aa:	e2 ee       	ldi	r30, 0xE2	; 226
+ 1ac:	f0 e0       	ldi	r31, 0x00	; 0
+ 1ae:	80 81       	ld	r24, Z
+ 1b0:	84 60       	ori	r24, 0x04	; 4
+ 1b2:	80 83       	st	Z, r24
+ 1b4:	08 95       	ret
+
+000001b6 <kbd_test_hit>:
+//! This function scans the keyboard keys and update the scan_key word.
+//!   if a key is pressed, the key_hit bit is set to TRUE.
+//!
+void kbd_test_hit(void)
+{
+   switch (usb_kbd_state)
+ 1b6:	20 91 0d 01 	lds	r18, 0x010D
+ 1ba:	22 23       	and	r18, r18
+ 1bc:	21 f0       	breq	.+8      	; 0x1c6 <kbd_test_hit+0x10>
+ 1be:	21 30       	cpi	r18, 0x01	; 1
+ 1c0:	09 f4       	brne	.+2      	; 0x1c4 <kbd_test_hit+0xe>
+ 1c2:	53 c0       	rjmp	.+166    	; 0x26a <kbd_test_hit+0xb4>
+ 1c4:	08 95       	ret
+   {
+	case 0:
+		if (Is_btn_weaponsincrease())
+ 1c6:	18 99       	sbic	0x03, 0	; 3
+ 1c8:	06 c0       	rjmp	.+12     	; 0x1d6 <kbd_test_hit+0x20>
+		{
+			usb_kbd_state = 1;
+ 1ca:	81 e0       	ldi	r24, 0x01	; 1
+ 1cc:	80 93 0d 01 	sts	0x010D, r24
+			usb_key_pointer = usb_weaponsincrease;
+ 1d0:	84 e9       	ldi	r24, 0x94	; 148
+ 1d2:	90 e0       	ldi	r25, 0x00	; 0
+ 1d4:	3f c0       	rjmp	.+126    	; 0x254 <kbd_test_hit+0x9e>
+			usb_data_to_send = (Uint16)sizeof(usb_weaponsincrease);
+		}
+		else if (Is_btn_shieldsincrease())
+ 1d6:	19 99       	sbic	0x03, 1	; 3
+ 1d8:	06 c0       	rjmp	.+12     	; 0x1e6 <kbd_test_hit+0x30>
+		{
+			usb_kbd_state = 1;
+ 1da:	81 e0       	ldi	r24, 0x01	; 1
+ 1dc:	80 93 0d 01 	sts	0x010D, r24
+			usb_key_pointer = usb_shieldsincrease;
+ 1e0:	83 e9       	ldi	r24, 0x93	; 147
+ 1e2:	90 e0       	ldi	r25, 0x00	; 0
+ 1e4:	37 c0       	rjmp	.+110    	; 0x254 <kbd_test_hit+0x9e>
+			usb_data_to_send = (Uint16)sizeof(usb_shieldsincrease);
+		}    
+	  
+		else if (Is_btn_enginesincrease())
+ 1e6:	1a 99       	sbic	0x03, 2	; 3
+ 1e8:	06 c0       	rjmp	.+12     	; 0x1f6 <kbd_test_hit+0x40>
+		{
+			usb_kbd_state = 1;
+ 1ea:	81 e0       	ldi	r24, 0x01	; 1
+ 1ec:	80 93 0d 01 	sts	0x010D, r24
+			usb_key_pointer = usb_enginesincrease;
+ 1f0:	82 e9       	ldi	r24, 0x92	; 146
+ 1f2:	90 e0       	ldi	r25, 0x00	; 0
+ 1f4:	2f c0       	rjmp	.+94     	; 0x254 <kbd_test_hit+0x9e>
+			usb_data_to_send = (Uint16)sizeof(usb_enginesincrease);
+		}
+	  
+		else if (Is_btn_shieldleft())
+ 1f6:	48 99       	sbic	0x09, 0	; 9
+ 1f8:	06 c0       	rjmp	.+12     	; 0x206 <kbd_test_hit+0x50>
+		{
+			usb_kbd_state = 1;
+ 1fa:	81 e0       	ldi	r24, 0x01	; 1
+ 1fc:	80 93 0d 01 	sts	0x010D, r24
+			usb_key_pointer = usb_shieldleft;
+ 200:	81 e9       	ldi	r24, 0x91	; 145
+ 202:	90 e0       	ldi	r25, 0x00	; 0
+ 204:	27 c0       	rjmp	.+78     	; 0x254 <kbd_test_hit+0x9e>
+			usb_data_to_send = (Uint16)sizeof(usb_shieldleft);
+		} 
+		else if (Is_btn_shieldright())
+ 206:	49 99       	sbic	0x09, 1	; 9
+ 208:	06 c0       	rjmp	.+12     	; 0x216 <kbd_test_hit+0x60>
+		{
+			usb_kbd_state = 1;
+ 20a:	81 e0       	ldi	r24, 0x01	; 1
+ 20c:	80 93 0d 01 	sts	0x010D, r24
+			usb_key_pointer = usb_shieldright;
+ 210:	80 e9       	ldi	r24, 0x90	; 144
+ 212:	90 e0       	ldi	r25, 0x00	; 0
+ 214:	1f c0       	rjmp	.+62     	; 0x254 <kbd_test_hit+0x9e>
+			usb_data_to_send = (Uint16)sizeof(usb_shieldright);
+		}
+		else if (Is_btn_shieldfront())
+ 216:	4a 99       	sbic	0x09, 2	; 9
+ 218:	06 c0       	rjmp	.+12     	; 0x226 <kbd_test_hit+0x70>
+		{
+			usb_kbd_state = 1;
+ 21a:	81 e0       	ldi	r24, 0x01	; 1
+ 21c:	80 93 0d 01 	sts	0x010D, r24
+			usb_key_pointer = usb_shieldfront;
+ 220:	8f e8       	ldi	r24, 0x8F	; 143
+ 222:	90 e0       	ldi	r25, 0x00	; 0
+ 224:	17 c0       	rjmp	.+46     	; 0x254 <kbd_test_hit+0x9e>
+			usb_data_to_send = (Uint16)sizeof(usb_shieldfront);
+		}
+		else if (Is_btn_shieldrear())
+ 226:	4b 99       	sbic	0x09, 3	; 9
+ 228:	06 c0       	rjmp	.+12     	; 0x236 <kbd_test_hit+0x80>
+		{
+			usb_kbd_state = 1;
+ 22a:	81 e0       	ldi	r24, 0x01	; 1
+ 22c:	80 93 0d 01 	sts	0x010D, r24
+			usb_key_pointer = usb_shieldrear;
+ 230:	8e e8       	ldi	r24, 0x8E	; 142
+ 232:	90 e0       	ldi	r25, 0x00	; 0
+ 234:	0f c0       	rjmp	.+30     	; 0x254 <kbd_test_hit+0x9e>
+			usb_data_to_send = (Uint16)sizeof(usb_shieldrear);
+		}
+		else if (Is_btn_shieldup())
+ 236:	4c 99       	sbic	0x09, 4	; 9
+ 238:	06 c0       	rjmp	.+12     	; 0x246 <kbd_test_hit+0x90>
+		{
+			usb_kbd_state = 1;
+ 23a:	81 e0       	ldi	r24, 0x01	; 1
+ 23c:	80 93 0d 01 	sts	0x010D, r24
+			usb_key_pointer = usb_shieldup;
+ 240:	8d e8       	ldi	r24, 0x8D	; 141
+ 242:	90 e0       	ldi	r25, 0x00	; 0
+ 244:	07 c0       	rjmp	.+14     	; 0x254 <kbd_test_hit+0x9e>
+			usb_data_to_send = (Uint16)sizeof(usb_shieldup);
+		}  
+		else if (Is_btn_shielddown())
+ 246:	4d 99       	sbic	0x09, 5	; 9
+ 248:	36 c0       	rjmp	.+108    	; 0x2b6 <kbd_test_hit+0x100>
+		{
+			usb_kbd_state = 1;
+ 24a:	81 e0       	ldi	r24, 0x01	; 1
+ 24c:	80 93 0d 01 	sts	0x010D, r24
+			usb_key_pointer = usb_shielddown;
+ 250:	8c e8       	ldi	r24, 0x8C	; 140
+ 252:	90 e0       	ldi	r25, 0x00	; 0
+ 254:	90 93 08 01 	sts	0x0108, r25
+ 258:	80 93 07 01 	sts	0x0107, r24
+			usb_data_to_send = (Uint16)sizeof(usb_shielddown);
+ 25c:	81 e0       	ldi	r24, 0x01	; 1
+ 25e:	90 e0       	ldi	r25, 0x00	; 0
+ 260:	90 93 0a 01 	sts	0x010A, r25
+ 264:	80 93 09 01 	sts	0x0109, r24
+ 268:	08 95       	ret
+		}
+      
+      break;
+
+      case 1:
+      if (usb_data_to_send != 0)
+ 26a:	80 91 09 01 	lds	r24, 0x0109
+ 26e:	90 91 0a 01 	lds	r25, 0x010A
+ 272:	00 97       	sbiw	r24, 0x00	; 0
+ 274:	f1 f0       	breq	.+60     	; 0x2b2 <kbd_test_hit+0xfc>
+      {
+         if ((key_hit == FALSE) && (transmit_no_key == FALSE))
+ 276:	30 91 0e 01 	lds	r19, 0x010E
+ 27a:	31 11       	cpse	r19, r1
+ 27c:	1c c0       	rjmp	.+56     	; 0x2b6 <kbd_test_hit+0x100>
+ 27e:	30 91 0f 01 	lds	r19, 0x010F
+ 282:	31 11       	cpse	r19, r1
+ 284:	18 c0       	rjmp	.+48     	; 0x2b6 <kbd_test_hit+0x100>
+         {
+#ifndef __GNUC__
+            usb_key = *usb_key_pointer++;
+#else
+            usb_key = pgm_read_byte_near(usb_key_pointer++);
+ 286:	e0 91 07 01 	lds	r30, 0x0107
+ 28a:	f0 91 08 01 	lds	r31, 0x0108
+ 28e:	af 01       	movw	r20, r30
+ 290:	4f 5f       	subi	r20, 0xFF	; 255
+ 292:	5f 4f       	sbci	r21, 0xFF	; 255
+ 294:	50 93 08 01 	sts	0x0108, r21
+ 298:	40 93 07 01 	sts	0x0107, r20
+ 29c:	e4 91       	lpm	r30, Z
+ 29e:	e0 93 0c 01 	sts	0x010C, r30
+#endif
+            usb_data_to_send --;
+ 2a2:	01 97       	sbiw	r24, 0x01	; 1
+ 2a4:	90 93 0a 01 	sts	0x010A, r25
+ 2a8:	80 93 09 01 	sts	0x0109, r24
+            key_hit = TRUE;
+ 2ac:	20 93 0e 01 	sts	0x010E, r18
+ 2b0:	08 95       	ret
+         }
+      }
+      else
+      {
+         usb_kbd_state = 0;
+ 2b2:	10 92 0d 01 	sts	0x010D, r1
+ 2b6:	08 95       	ret
+
+000002b8 <keyboard_task>:
+//! @brief Entry point of the mouse management
+//! This function links the mouse and the USB bus.
+//!
+void keyboard_task(void)
+{
+   if(Is_device_enumerated())
+ 2b8:	80 91 17 01 	lds	r24, 0x0117
+ 2bc:	88 23       	and	r24, r24
+ 2be:	e1 f1       	breq	.+120    	; 0x338 <keyboard_task+0x80>
+   {
+      // if USB ready to transmit new data :
+      //        - if last time = 0, nothing
+      //        - if key pressed -> transmit key
+      //        - if !key pressed -> transmit 0
+      if (key_hit==FALSE )
+ 2c0:	80 91 0e 01 	lds	r24, 0x010E
+ 2c4:	81 11       	cpse	r24, r1
+ 2c6:	09 c0       	rjmp	.+18     	; 0x2da <keyboard_task+0x22>
+      {
+
+         if (cpt_sof>= NB_IDLE_POLLING_SOF) 
+ 2c8:	80 91 0b 01 	lds	r24, 0x010B
+ 2cc:	84 36       	cpi	r24, 0x64	; 100
+ 2ce:	a0 f1       	brcs	.+104    	; 0x338 <keyboard_task+0x80>
+         {
+            kbd_test_hit();
+ 2d0:	0e 94 db 00 	call	0x1b6	; 0x1b6 <kbd_test_hit>
+            cpt_sof = 0;
+ 2d4:	10 92 0b 01 	sts	0x010B, r1
+ 2d8:	08 95       	ret
+         }
+      }
+      
+      else
+      {
+         Usb_select_endpoint(EP_KBD_IN);   
+ 2da:	81 e0       	ldi	r24, 0x01	; 1
+ 2dc:	80 93 e9 00 	sts	0x00E9, r24
+         if(Is_usb_write_enabled())
+ 2e0:	90 91 e8 00 	lds	r25, 0x00E8
+ 2e4:	95 ff       	sbrs	r25, 5
+ 2e6:	28 c0       	rjmp	.+80     	; 0x338 <keyboard_task+0x80>
+         {
+            if ( transmit_no_key==FALSE)
+ 2e8:	90 91 0f 01 	lds	r25, 0x010F
+ 2ec:	91 11       	cpse	r25, r1
+ 2ee:	0b c0       	rjmp	.+22     	; 0x306 <keyboard_task+0x4e>
+            {
+               transmit_no_key = TRUE;
+ 2f0:	80 93 0f 01 	sts	0x010F, r24
+               Usb_write_byte(HID_MODIFIER_NONE);  // Byte0: Modifier
+ 2f4:	10 92 f1 00 	sts	0x00F1, r1
+               Usb_write_byte(0);                  // Byte1: Reserved
+ 2f8:	10 92 f1 00 	sts	0x00F1, r1
+               Usb_write_byte(usb_key);            // Byte2: Keycode 0
+ 2fc:	80 91 0c 01 	lds	r24, 0x010C
+ 300:	80 93 f1 00 	sts	0x00F1, r24
+ 304:	0a c0       	rjmp	.+20     	; 0x31a <keyboard_task+0x62>
+               Usb_send_in();
+               return;
+            }
+            else
+            {
+               key_hit = FALSE;
+ 306:	10 92 0e 01 	sts	0x010E, r1
+               transmit_no_key = FALSE;
+ 30a:	10 92 0f 01 	sts	0x010F, r1
+               Usb_write_byte(0);
+ 30e:	10 92 f1 00 	sts	0x00F1, r1
+               Usb_write_byte(0);
+ 312:	10 92 f1 00 	sts	0x00F1, r1
+               Usb_write_byte(0);
+ 316:	10 92 f1 00 	sts	0x00F1, r1
+               Usb_write_byte(0);
+ 31a:	10 92 f1 00 	sts	0x00F1, r1
+               Usb_write_byte(0);
+ 31e:	10 92 f1 00 	sts	0x00F1, r1
+               Usb_write_byte(0);
+ 322:	10 92 f1 00 	sts	0x00F1, r1
+               Usb_write_byte(0);
+ 326:	10 92 f1 00 	sts	0x00F1, r1
+               Usb_write_byte(0);
+ 32a:	10 92 f1 00 	sts	0x00F1, r1
+               Usb_send_in();
+ 32e:	80 91 e8 00 	lds	r24, 0x00E8
+ 332:	8f 77       	andi	r24, 0x7F	; 127
+ 334:	80 93 e8 00 	sts	0x00E8, r24
+ 338:	08 95       	ret
+
+0000033a <suspend_action>:
+
+
+void suspend_action(void)
+{
+#if (USB_REMOTE_WAKEUP_FEATURE == ENABLED)
+   if (remote_wakeup_feature == ENABLED)
+ 33a:	80 91 04 01 	lds	r24, 0x0104
+ 33e:	81 30       	cpi	r24, 0x01	; 1
+ 340:	59 f4       	brne	.+22     	; 0x358 <suspend_action+0x1e>
+   {
+      Switches_enable_it()
+ 342:	80 91 6b 00 	lds	r24, 0x006B
+ 346:	81 6f       	ori	r24, 0xF1	; 241
+ 348:	80 93 6b 00 	sts	0x006B, r24
+ 34c:	d8 9a       	sbi	0x1b, 0	; 27
+ 34e:	80 91 68 00 	lds	r24, 0x0068
+ 352:	81 60       	ori	r24, 0x01	; 1
+ 354:	80 93 68 00 	sts	0x0068, r24
+   }
+#endif 
+   Enable_interrupt();  
+ 358:	78 94       	sei
+   Enter_power_down_mode();
+ 35a:	0c 94 e4 01 	jmp	0x3c8	; 0x3c8 <set_power_down_mode>
+
+0000035e <__vector_9>:
+ ISR(PCINT0_vect)
+#else
+#pragma vector = PCINT0_vect
+__interrupt void mouse_disco_int()
+#endif
+{
+ 35e:	1f 92       	push	r1
+ 360:	0f 92       	push	r0
+ 362:	0f b6       	in	r0, 0x3f	; 63
+ 364:	0f 92       	push	r0
+ 366:	11 24       	eor	r1, r1
+ 368:	2f 93       	push	r18
+ 36a:	3f 93       	push	r19
+ 36c:	4f 93       	push	r20
+ 36e:	5f 93       	push	r21
+ 370:	6f 93       	push	r22
+ 372:	7f 93       	push	r23
+ 374:	8f 93       	push	r24
+ 376:	9f 93       	push	r25
+ 378:	af 93       	push	r26
+ 37a:	bf 93       	push	r27
+ 37c:	ef 93       	push	r30
+ 37e:	ff 93       	push	r31
+   Switches_disable_it();
+ 380:	e8 e6       	ldi	r30, 0x68	; 104
+ 382:	f0 e0       	ldi	r31, 0x00	; 0
+ 384:	80 81       	ld	r24, Z
+ 386:	8e 7f       	andi	r24, 0xFE	; 254
+ 388:	80 83       	st	Z, r24
+ 38a:	d8 9a       	sbi	0x1b, 0	; 27
+ 38c:	eb e6       	ldi	r30, 0x6B	; 107
+ 38e:	f0 e0       	ldi	r31, 0x00	; 0
+ 390:	80 81       	ld	r24, Z
+ 392:	8e 70       	andi	r24, 0x0E	; 14
+ 394:	80 83       	st	Z, r24
+   usb_generate_remote_wakeup();
+ 396:	0e 94 95 06 	call	0xd2a	; 0xd2a <usb_generate_remote_wakeup>
+}
+ 39a:	ff 91       	pop	r31
+ 39c:	ef 91       	pop	r30
+ 39e:	bf 91       	pop	r27
+ 3a0:	af 91       	pop	r26
+ 3a2:	9f 91       	pop	r25
+ 3a4:	8f 91       	pop	r24
+ 3a6:	7f 91       	pop	r23
+ 3a8:	6f 91       	pop	r22
+ 3aa:	5f 91       	pop	r21
+ 3ac:	4f 91       	pop	r20
+ 3ae:	3f 91       	pop	r19
+ 3b0:	2f 91       	pop	r18
+ 3b2:	0f 90       	pop	r0
+ 3b4:	0f be       	out	0x3f, r0	; 63
+ 3b6:	0f 90       	pop	r0
+ 3b8:	1f 90       	pop	r1
+ 3ba:	18 95       	reti
+
+000003bc <sof_action>:
+
+
+void sof_action(void)
+{
+   cpt_sof++;
+ 3bc:	80 91 0b 01 	lds	r24, 0x010B
+ 3c0:	8f 5f       	subi	r24, 0xFF	; 255
+ 3c2:	80 93 0b 01 	sts	0x010B, r24
+ 3c6:	08 95       	ret
+
+000003c8 <set_power_down_mode>:
+
+//! This function makes the AVR core enter power down mode.
+//!
+void set_power_down_mode(void)
+{
+   Setup_power_down_mode();
+ 3c8:	13 be       	out	0x33, r1	; 51
+ 3ca:	83 b7       	in	r24, 0x33	; 51
+ 3cc:	85 60       	ori	r24, 0x05	; 5
+ 3ce:	83 bf       	out	0x33, r24	; 51
+   Sleep_instruction();
+ 3d0:	88 95       	sleep
+ 3d2:	08 95       	ret
+
+000003d4 <scheduler_init>:
+   #endif
+   #ifdef TOKEN_MODE
+      token =  TOKEN_FREE;
+   #endif
+   #ifdef Scheduler_task_1_init
+      Scheduler_task_1_init();  
+ 3d4:	0e 94 b0 06 	call	0xd60	; 0xd60 <usb_task_init>
+      Scheduler_call_next_init();
+   #endif
+   #ifdef Scheduler_task_2_init
+      Scheduler_task_2_init();  
+ 3d8:	0c 94 c1 00 	jmp	0x182	; 0x182 <keyboard_task_init>
+
+000003dc <scheduler_tasks>:
+
+   for(;;)
+   {
+      Scheduler_new_schedule();
+      #ifdef Scheduler_task_1
+         Scheduler_task_1();
+ 3dc:	0e 94 b7 06 	call	0xd6e	; 0xd6e <usb_task>
+         Scheduler_call_next_task();
+      #endif
+      #ifdef Scheduler_task_2
+         Scheduler_task_2();
+ 3e0:	0e 94 5c 01 	call	0x2b8	; 0x2b8 <keyboard_task>
+      #endif
+      #ifdef Scheduler_task_11
+         Scheduler_task_11();
+         Scheduler_call_next_task();
+      #endif
+   }
+ 3e4:	fb cf       	rjmp	.-10     	; 0x3dc <scheduler_tasks>
+
+000003e6 <scheduler>:
+//!
+//! @param  :none
+//! @return :none
+void scheduler (void)
+{
+   scheduler_init();
+ 3e6:	0e 94 ea 01 	call	0x3d4	; 0x3d4 <scheduler_init>
+   scheduler_tasks();
+ 3ea:	0e 94 ee 01 	call	0x3dc	; 0x3dc <scheduler_tasks>
+
+000003ee <main>:
+
+//_____ D E F I N I T I O N S ______________________________________________
+
+int main(void)
+{
+   wdtdrv_disable();
+ 3ee:	0e 94 e1 07 	call	0xfc2	; 0xfc2 <wdtdrv_disable>
+ 3f2:	20 e0       	ldi	r18, 0x00	; 0
+ 3f4:	30 e0       	ldi	r19, 0x00	; 0
+ 3f6:	80 e8       	ldi	r24, 0x80	; 128
+ 3f8:	0f b6       	in	r0, 0x3f	; 63
+ 3fa:	f8 94       	cli
+ 3fc:	80 93 61 00 	sts	0x0061, r24
+ 400:	20 93 61 00 	sts	0x0061, r18
+ 404:	0f be       	out	0x3f, r0	; 63
+   Clear_prescaler();
+   scheduler();
+ 406:	0e 94 f3 01 	call	0x3e6	; 0x3e6 <scheduler>
+   return 0;
+}
+ 40a:	80 e0       	ldi	r24, 0x00	; 0
+ 40c:	90 e0       	ldi	r25, 0x00	; 0
+ 40e:	08 95       	ret
+
+00000410 <usb_device_task_init>:
+//! @return none
+//!
+//!/
+void usb_device_task_init(void)
+{
+   Usb_disable();
+ 410:	e8 ed       	ldi	r30, 0xD8	; 216
+ 412:	f0 e0       	ldi	r31, 0x00	; 0
+ 414:	80 81       	ld	r24, Z
+ 416:	8f 77       	andi	r24, 0x7F	; 127
+ 418:	80 83       	st	Z, r24
+   Usb_enable();
+ 41a:	80 81       	ld	r24, Z
+ 41c:	80 68       	ori	r24, 0x80	; 128
+ 41e:	80 83       	st	Z, r24
+ 420:	08 95       	ret
+
+00000422 <usb_start_device>:
+//!
+//! @return none
+//!
+void usb_start_device (void)
+{
+   Usb_freeze_clock();
+ 422:	80 91 d8 00 	lds	r24, 0x00D8
+ 426:	80 62       	ori	r24, 0x20	; 32
+ 428:	80 93 d8 00 	sts	0x00D8, r24
+#ifndef USE_USB_AUTOBAUD
+   Pll_start_auto();
+ 42c:	86 e0       	ldi	r24, 0x06	; 6
+ 42e:	89 bd       	out	0x29, r24	; 41
+#else
+   usb_autobaud();
+#endif
+   Wait_pll_ready();
+ 430:	09 b4       	in	r0, 0x29	; 41
+ 432:	00 fe       	sbrs	r0, 0
+ 434:	fd cf       	rjmp	.-6      	; 0x430 <usb_start_device+0xe>
+   Disable_interrupt();
+ 436:	f8 94       	cli
+   Usb_unfreeze_clock();
+ 438:	80 91 d8 00 	lds	r24, 0x00D8
+ 43c:	8f 7d       	andi	r24, 0xDF	; 223
+ 43e:	80 93 d8 00 	sts	0x00D8, r24
+   Usb_attach();
+ 442:	80 91 e0 00 	lds	r24, 0x00E0
+ 446:	8e 7f       	andi	r24, 0xFE	; 254
+ 448:	80 93 e0 00 	sts	0x00E0, r24
+#if (USB_RESET_CPU == ENABLED)
+   Usb_reset_all_system();
+#else
+   Usb_reset_macro_only();
+ 44c:	80 91 e0 00 	lds	r24, 0x00E0
+ 450:	8b 7f       	andi	r24, 0xFB	; 251
+ 452:	80 93 e0 00 	sts	0x00E0, r24
+#endif
+   usb_init_device();         // configure the USB controller EP0
+ 456:	0e 94 78 02 	call	0x4f0	; 0x4f0 <usb_init_device>
+   Usb_enable_suspend_interrupt();
+ 45a:	80 91 e2 00 	lds	r24, 0x00E2
+ 45e:	81 60       	ori	r24, 0x01	; 1
+ 460:	80 93 e2 00 	sts	0x00E2, r24
+   Usb_enable_reset_interrupt();
+ 464:	80 91 e2 00 	lds	r24, 0x00E2
+ 468:	88 60       	ori	r24, 0x08	; 8
+ 46a:	80 93 e2 00 	sts	0x00E2, r24
+   Enable_interrupt();
+ 46e:	78 94       	sei
+ 470:	08 95       	ret
+
+00000472 <usb_device_task>:
+//! @param none
+//!
+//! @return none
+void usb_device_task(void)
+{
+   if (usb_connected == FALSE)
+ 472:	80 91 01 01 	lds	r24, 0x0101
+ 476:	81 11       	cpse	r24, r1
+ 478:	07 c0       	rjmp	.+14     	; 0x488 <usb_device_task+0x16>
+       usb_connected = TRUE;
+       usb_start_device();
+       Usb_vbus_on_action();
+     }
+     #else
+     usb_connected = TRUE;    // attach if application is not self-powered
+ 47a:	81 e0       	ldi	r24, 0x01	; 1
+ 47c:	80 93 01 01 	sts	0x0101, r24
+     usb_start_device();
+ 480:	0e 94 11 02 	call	0x422	; 0x422 <usb_start_device>
+     Usb_vbus_on_action();
+ 484:	0e 94 c1 00 	call	0x182	; 0x182 <keyboard_task_init>
+     usb_connected = FALSE;
+     usb_configuration_nb=0;
+   }
+   #endif
+
+   if(Is_usb_event(EVT_USB_RESET))
+ 488:	80 91 05 01 	lds	r24, 0x0105
+ 48c:	90 91 06 01 	lds	r25, 0x0106
+ 490:	90 ff       	sbrs	r25, 0
+ 492:	10 c0       	rjmp	.+32     	; 0x4b4 <usb_device_task+0x42>
+   {
+      Usb_ack_event(EVT_USB_RESET);
+ 494:	80 91 05 01 	lds	r24, 0x0105
+ 498:	90 91 06 01 	lds	r25, 0x0106
+ 49c:	9e 7f       	andi	r25, 0xFE	; 254
+ 49e:	90 93 06 01 	sts	0x0106, r25
+ 4a2:	80 93 05 01 	sts	0x0105, r24
+      Usb_reset_endpoint(0);
+ 4a6:	81 e0       	ldi	r24, 0x01	; 1
+ 4a8:	80 93 ea 00 	sts	0x00EA, r24
+ 4ac:	10 92 ea 00 	sts	0x00EA, r1
+      usb_configuration_nb=0;
+ 4b0:	10 92 17 01 	sts	0x0117, r1
+   }
+
+   // Here connection to the device enumeration process
+   Usb_select_endpoint(EP_CONTROL);
+ 4b4:	10 92 e9 00 	sts	0x00E9, r1
+   if (Is_usb_receive_setup())
+ 4b8:	80 91 e8 00 	lds	r24, 0x00E8
+ 4bc:	83 fd       	sbrc	r24, 3
+   {
+      usb_process_request();
+ 4be:	0c 94 6b 04 	jmp	0x8d6	; 0x8d6 <usb_process_request>
+ 4c2:	08 95       	ret
+
+000004c4 <usb_config_ep>:
+//!
+//! @return Is_endpoint_configured.
+//!
+U8 usb_config_ep(U8 config0, U8 config1)
+{
+    Usb_enable_endpoint();
+ 4c4:	eb ee       	ldi	r30, 0xEB	; 235
+ 4c6:	f0 e0       	ldi	r31, 0x00	; 0
+ 4c8:	90 81       	ld	r25, Z
+ 4ca:	91 60       	ori	r25, 0x01	; 1
+ 4cc:	90 83       	st	Z, r25
+    UECFG0X = config0;
+ 4ce:	80 93 ec 00 	sts	0x00EC, r24
+    UECFG1X = (UECFG1X & (1<<ALLOC)) | config1;
+ 4d2:	ed ee       	ldi	r30, 0xED	; 237
+ 4d4:	f0 e0       	ldi	r31, 0x00	; 0
+ 4d6:	80 81       	ld	r24, Z
+ 4d8:	82 70       	andi	r24, 0x02	; 2
+ 4da:	68 2b       	or	r22, r24
+ 4dc:	60 83       	st	Z, r22
+    Usb_allocate_memory();
+ 4de:	80 81       	ld	r24, Z
+ 4e0:	82 60       	ori	r24, 0x02	; 2
+ 4e2:	80 83       	st	Z, r24
+    return (Is_endpoint_configured());
+ 4e4:	80 91 ee 00 	lds	r24, 0x00EE
+}
+ 4e8:	88 1f       	adc	r24, r24
+ 4ea:	88 27       	eor	r24, r24
+ 4ec:	88 1f       	adc	r24, r24
+ 4ee:	08 95       	ret
+
+000004f0 <usb_init_device>:
+//!
+//! @return status
+//!
+U8 usb_init_device (void)
+{
+      Usb_select_endpoint(EP_CONTROL);
+ 4f0:	10 92 e9 00 	sts	0x00E9, r1
+      if(!Is_usb_endpoint_enabled())
+ 4f4:	80 91 eb 00 	lds	r24, 0x00EB
+ 4f8:	80 fd       	sbrc	r24, 0
+ 4fa:	06 c0       	rjmp	.+12     	; 0x508 <__stack+0x9>
+      {
+         return usb_configure_endpoint(EP_CONTROL,    \
+ 4fc:	10 92 e9 00 	sts	0x00E9, r1
+ 500:	60 e2       	ldi	r22, 0x20	; 32
+ 502:	82 e0       	ldi	r24, 0x02	; 2
+ 504:	0c 94 62 02 	jmp	0x4c4	; 0x4c4 <usb_config_ep>
+                                SIZE_32,       \
+                                ONE_BANK,      \
+                                NYET_DISABLED);
+      }
+   return FALSE;
+}
+ 508:	80 e0       	ldi	r24, 0x00	; 0
+ 50a:	08 95       	ret
+
+0000050c <usb_user_endpoint_init>:
+//!
+//! @param conf_nb configuration number choosed by USB host
+//!
+void usb_user_endpoint_init(U8 conf_nb)
+{
+   usb_configure_endpoint( EP_KBD_IN,     \
+ 50c:	81 e0       	ldi	r24, 0x01	; 1
+ 50e:	80 93 e9 00 	sts	0x00E9, r24
+ 512:	60 e0       	ldi	r22, 0x00	; 0
+ 514:	81 ec       	ldi	r24, 0xC1	; 193
+ 516:	0c 94 62 02 	jmp	0x4c4	; 0x4c4 <usb_config_ep>
+
+0000051a <usb_user_interface_get>:
+//! @return alternate setting configurated
+//!
+U8   usb_user_interface_get( U16 wInterface )
+{
+   return 0;  // Only one alternate setting possible for all interface
+}
+ 51a:	80 e0       	ldi	r24, 0x00	; 0
+ 51c:	08 95       	ret
+
+0000051e <usb_user_interface_reset>:
+//! @param alternate_setting  alternate setting selected
+//!
+void usb_user_interface_reset(U16 wInterface, U8 alternate_setting)
+{  
+   // default setting selected = reset data toggle
+   if( INTERFACE_NB_KBD == wInterface )
+ 51e:	89 2b       	or	r24, r25
+ 520:	91 f4       	brne	.+36     	; 0x546 <usb_user_interface_reset+0x28>
+   {
+      // Interface mouse
+      Usb_select_endpoint(EP_KBD_IN);
+ 522:	81 e0       	ldi	r24, 0x01	; 1
+ 524:	80 93 e9 00 	sts	0x00E9, r24
+      Usb_disable_stall_handshake();
+ 528:	80 91 eb 00 	lds	r24, 0x00EB
+ 52c:	80 61       	ori	r24, 0x10	; 16
+ 52e:	80 93 eb 00 	sts	0x00EB, r24
+      Usb_reset_endpoint(EP_KBD_IN);
+ 532:	82 e0       	ldi	r24, 0x02	; 2
+ 534:	80 93 ea 00 	sts	0x00EA, r24
+ 538:	10 92 ea 00 	sts	0x00EA, r1
+      Usb_reset_data_toggle();
+ 53c:	80 91 eb 00 	lds	r24, 0x00EB
+ 540:	88 60       	ori	r24, 0x08	; 8
+ 542:	80 93 eb 00 	sts	0x00EB, r24
+ 546:	08 95       	ret
+
+00000548 <usb_user_get_descriptor>:
+//!
+//! @return FALSE, if the global descriptor no filled
+//!
+Bool usb_user_get_descriptor(U8 type, U8 string)
+{
+   switch(type)
+ 548:	83 30       	cpi	r24, 0x03	; 3
+ 54a:	e1 f4       	brne	.+56     	; 0x584 <usb_user_get_descriptor+0x3c>
+   {
+      case DESCRIPTOR_STRING:
+      switch (string)
+ 54c:	61 30       	cpi	r22, 0x01	; 1
+ 54e:	79 f0       	breq	.+30     	; 0x56e <usb_user_get_descriptor+0x26>
+ 550:	40 f0       	brcs	.+16     	; 0x562 <usb_user_get_descriptor+0x1a>
+ 552:	62 30       	cpi	r22, 0x02	; 2
+ 554:	b9 f4       	brne	.+46     	; 0x584 <usb_user_get_descriptor+0x3c>
+         pbuffer = &(usb_user_manufacturer_string_descriptor.bLength);
+         return TRUE;
+         break;
+        
+         case PROD_INDEX:
+         data_to_transfer = sizeof (usb_user_product_string_descriptor);
+ 556:	8c e2       	ldi	r24, 0x2C	; 44
+ 558:	80 93 18 01 	sts	0x0118, r24
+         pbuffer = &(usb_user_product_string_descriptor.bLength);
+ 55c:	88 ed       	ldi	r24, 0xD8	; 216
+ 55e:	90 e0       	ldi	r25, 0x00	; 0
+ 560:	0b c0       	rjmp	.+22     	; 0x578 <usb_user_get_descriptor+0x30>
+   {
+      case DESCRIPTOR_STRING:
+      switch (string)
+      {
+         case LANG_ID:
+         data_to_transfer = sizeof (usb_user_language_id);
+ 562:	84 e0       	ldi	r24, 0x04	; 4
+ 564:	80 93 18 01 	sts	0x0118, r24
+         pbuffer = &(usb_user_language_id.bLength);
+ 568:	84 ed       	ldi	r24, 0xD4	; 212
+ 56a:	90 e0       	ldi	r25, 0x00	; 0
+ 56c:	05 c0       	rjmp	.+10     	; 0x578 <usb_user_get_descriptor+0x30>
+         return TRUE;
+         break;
+        
+         case MAN_INDEX:
+         data_to_transfer = sizeof (usb_user_manufacturer_string_descriptor);
+ 56e:	8c e0       	ldi	r24, 0x0C	; 12
+ 570:	80 93 18 01 	sts	0x0118, r24
+         pbuffer = &(usb_user_manufacturer_string_descriptor.bLength);
+ 574:	84 e0       	ldi	r24, 0x04	; 4
+ 576:	91 e0       	ldi	r25, 0x01	; 1
+         return TRUE;
+         break;
+        
+         case PROD_INDEX:
+         data_to_transfer = sizeof (usb_user_product_string_descriptor);
+         pbuffer = &(usb_user_product_string_descriptor.bLength);
+ 578:	90 93 1a 01 	sts	0x011A, r25
+ 57c:	80 93 19 01 	sts	0x0119, r24
+         return TRUE;
+ 580:	81 e0       	ldi	r24, 0x01	; 1
+ 582:	08 95       	ret
+         break;
+#endif
+      }
+      break;
+   }
+   return FALSE;
+ 584:	80 e0       	ldi	r24, 0x00	; 0
+}
+ 586:	08 95       	ret
+
+00000588 <hid_get_report_descriptor>:
+
+
+//! @brief This function manages hit get repport request.
+//!
+void hid_get_report_descriptor(void)
+{
+ 588:	cf 93       	push	r28
+ 58a:	df 93       	push	r29
+ 58c:	00 d0       	rcall	.+0      	; 0x58e <hid_get_report_descriptor+0x6>
+ 58e:	00 d0       	rcall	.+0      	; 0x590 <hid_get_report_descriptor+0x8>
+ 590:	cd b7       	in	r28, 0x3d	; 61
+ 592:	de b7       	in	r29, 0x3e	; 62
+   U16 wLength;
+   U8  nb_byte;
+   bit zlp = FALSE;
+   U16 wInterface;
+
+   LSB(wInterface)=Usb_read_byte();
+ 594:	80 91 f1 00 	lds	r24, 0x00F1
+ 598:	89 83       	std	Y+1, r24	; 0x01
+   MSB(wInterface)=Usb_read_byte();
+ 59a:	80 91 f1 00 	lds	r24, 0x00F1
+ 59e:	8a 83       	std	Y+2, r24	; 0x02
+
+   data_to_transfer = sizeof(usb_hid_report_descriptor_kbd);
+ 5a0:	8f e3       	ldi	r24, 0x3F	; 63
+ 5a2:	80 93 18 01 	sts	0x0118, r24
+   pbuffer = &(usb_hid_report_descriptor_kbd.report[0]);
+ 5a6:	85 e9       	ldi	r24, 0x95	; 149
+ 5a8:	90 e0       	ldi	r25, 0x00	; 0
+ 5aa:	90 93 1a 01 	sts	0x011A, r25
+ 5ae:	80 93 19 01 	sts	0x0119, r24
+
+   LSB(wLength) = Usb_read_byte();
+ 5b2:	80 91 f1 00 	lds	r24, 0x00F1
+ 5b6:	8b 83       	std	Y+3, r24	; 0x03
+   MSB(wLength) = Usb_read_byte();
+ 5b8:	80 91 f1 00 	lds	r24, 0x00F1
+ 5bc:	8c 83       	std	Y+4, r24	; 0x04
+   Usb_ack_receive_setup();
+ 5be:	80 91 e8 00 	lds	r24, 0x00E8
+ 5c2:	87 7f       	andi	r24, 0xF7	; 247
+ 5c4:	80 93 e8 00 	sts	0x00E8, r24
+
+   if (wLength > data_to_transfer)
+ 5c8:	2b 81       	ldd	r18, Y+3	; 0x03
+ 5ca:	3c 81       	ldd	r19, Y+4	; 0x04
+ 5cc:	80 91 18 01 	lds	r24, 0x0118
+ 5d0:	48 2f       	mov	r20, r24
+ 5d2:	50 e0       	ldi	r21, 0x00	; 0
+ 5d4:	42 17       	cp	r20, r18
+ 5d6:	53 07       	cpc	r21, r19
+ 5d8:	20 f4       	brcc	.+8      	; 0x5e2 <hid_get_report_descriptor+0x5a>
+   {
+      if ((data_to_transfer % EP_CONTROL_LENGTH) == 0) { zlp = TRUE; }
+ 5da:	8f 71       	andi	r24, 0x1F	; 31
+ 5dc:	91 e0       	ldi	r25, 0x01	; 1
+ 5de:	b9 f0       	breq	.+46     	; 0x60e <hid_get_report_descriptor+0x86>
+ 5e0:	02 c0       	rjmp	.+4      	; 0x5e6 <hid_get_report_descriptor+0x5e>
+      else { zlp = FALSE; }
+   }
+   else
+   {
+      data_to_transfer = (U8)wLength;           // send only requested number of data
+ 5e2:	20 93 18 01 	sts	0x0118, r18
+//!
+void hid_get_report_descriptor(void)
+{
+   U16 wLength;
+   U8  nb_byte;
+   bit zlp = FALSE;
+ 5e6:	90 e0       	ldi	r25, 0x00	; 0
+ 5e8:	12 c0       	rjmp	.+36     	; 0x60e <hid_get_report_descriptor+0x86>
+   else
+   {
+      data_to_transfer = (U8)wLength;           // send only requested number of data
+   }
+
+   while((data_to_transfer != 0) && (!Is_usb_receive_out()))
+ 5ea:	80 91 e8 00 	lds	r24, 0x00E8
+ 5ee:	82 fd       	sbrc	r24, 2
+ 5f0:	29 c0       	rjmp	.+82     	; 0x644 <hid_get_report_descriptor+0xbc>
+   {
+      while(!Is_usb_read_control_enabled());
+ 5f2:	80 91 e8 00 	lds	r24, 0x00E8
+ 5f6:	80 ff       	sbrs	r24, 0
+ 5f8:	fc cf       	rjmp	.-8      	; 0x5f2 <hid_get_report_descriptor+0x6a>
+ 5fa:	81 e2       	ldi	r24, 0x21	; 33
+
+      nb_byte=0;
+      while(data_to_transfer != 0)              // Send data until necessary
+ 5fc:	20 91 18 01 	lds	r18, 0x0118
+ 600:	21 11       	cpse	r18, r1
+ 602:	0a c0       	rjmp	.+20     	; 0x618 <hid_get_report_descriptor+0x90>
+//warning with AVRGCC assumes devices descriptors are stored in the lower 64Kbytes of on-chip flash memory
+         Usb_write_byte(pgm_read_byte_near((unsigned int)pbuffer++));
+#endif
+         data_to_transfer --;
+      }
+      Usb_send_control_in();
+ 604:	80 91 e8 00 	lds	r24, 0x00E8
+ 608:	8e 7f       	andi	r24, 0xFE	; 254
+ 60a:	80 93 e8 00 	sts	0x00E8, r24
+   else
+   {
+      data_to_transfer = (U8)wLength;           // send only requested number of data
+   }
+
+   while((data_to_transfer != 0) && (!Is_usb_receive_out()))
+ 60e:	80 91 18 01 	lds	r24, 0x0118
+ 612:	81 11       	cpse	r24, r1
+ 614:	ea cf       	rjmp	.-44     	; 0x5ea <hid_get_report_descriptor+0x62>
+ 616:	16 c0       	rjmp	.+44     	; 0x644 <hid_get_report_descriptor+0xbc>
+ 618:	81 50       	subi	r24, 0x01	; 1
+      while(!Is_usb_read_control_enabled());
+
+      nb_byte=0;
+      while(data_to_transfer != 0)              // Send data until necessary
+      {
+         if(nb_byte++==EP_CONTROL_LENGTH)       // Check endpoint 0 size
+ 61a:	a1 f3       	breq	.-24     	; 0x604 <hid_get_report_descriptor+0x7c>
+         }
+#ifndef __GNUC__
+         Usb_write_byte(*pbuffer++);
+#else    // AVRGCC does not support point to PGM space
+//warning with AVRGCC assumes devices descriptors are stored in the lower 64Kbytes of on-chip flash memory
+         Usb_write_byte(pgm_read_byte_near((unsigned int)pbuffer++));
+ 61c:	e0 91 19 01 	lds	r30, 0x0119
+ 620:	f0 91 1a 01 	lds	r31, 0x011A
+ 624:	9f 01       	movw	r18, r30
+ 626:	2f 5f       	subi	r18, 0xFF	; 255
+ 628:	3f 4f       	sbci	r19, 0xFF	; 255
+ 62a:	30 93 1a 01 	sts	0x011A, r19
+ 62e:	20 93 19 01 	sts	0x0119, r18
+ 632:	e4 91       	lpm	r30, Z
+ 634:	e0 93 f1 00 	sts	0x00F1, r30
+#endif
+         data_to_transfer --;
+ 638:	20 91 18 01 	lds	r18, 0x0118
+ 63c:	21 50       	subi	r18, 0x01	; 1
+ 63e:	20 93 18 01 	sts	0x0118, r18
+ 642:	dc cf       	rjmp	.-72     	; 0x5fc <hid_get_report_descriptor+0x74>
+      }
+      Usb_send_control_in();
+   }
+
+   if(Is_usb_receive_out())
+ 644:	80 91 e8 00 	lds	r24, 0x00E8
+ 648:	82 fd       	sbrc	r24, 2
+ 64a:	0f c0       	rjmp	.+30     	; 0x66a <hid_get_report_descriptor+0xe2>
+   { 
+      // abort from Host
+      Usb_ack_receive_out();
+      return;
+   }
+   if(zlp == TRUE)
+ 64c:	91 30       	cpi	r25, 0x01	; 1
+ 64e:	49 f4       	brne	.+18     	; 0x662 <hid_get_report_descriptor+0xda>
+   { 
+      while(!Is_usb_read_control_enabled());
+ 650:	80 91 e8 00 	lds	r24, 0x00E8
+ 654:	80 ff       	sbrs	r24, 0
+ 656:	fc cf       	rjmp	.-8      	; 0x650 <hid_get_report_descriptor+0xc8>
+      Usb_send_control_in();
+ 658:	80 91 e8 00 	lds	r24, 0x00E8
+ 65c:	8e 7f       	andi	r24, 0xFE	; 254
+ 65e:	80 93 e8 00 	sts	0x00E8, r24
+   }
+
+   while(!Is_usb_receive_out());
+ 662:	80 91 e8 00 	lds	r24, 0x00E8
+ 666:	82 ff       	sbrs	r24, 2
+ 668:	fc cf       	rjmp	.-8      	; 0x662 <hid_get_report_descriptor+0xda>
+   Usb_ack_receive_out();
+ 66a:	80 91 e8 00 	lds	r24, 0x00E8
+ 66e:	8b 7f       	andi	r24, 0xFB	; 251
+ 670:	80 93 e8 00 	sts	0x00E8, r24
+ 674:	80 91 e8 00 	lds	r24, 0x00E8
+ 678:	8f 77       	andi	r24, 0x7F	; 127
+ 67a:	80 93 e8 00 	sts	0x00E8, r24
+}
+ 67e:	0f 90       	pop	r0
+ 680:	0f 90       	pop	r0
+ 682:	0f 90       	pop	r0
+ 684:	0f 90       	pop	r0
+ 686:	df 91       	pop	r29
+ 688:	cf 91       	pop	r28
+ 68a:	08 95       	ret
+
+0000068c <usb_hid_set_report_ouput>:
+
+//! @brief This function manages hit set report request.
+//!
+void usb_hid_set_report_ouput (void)
+{
+   Usb_ack_receive_setup();
+ 68c:	80 91 e8 00 	lds	r24, 0x00E8
+ 690:	87 7f       	andi	r24, 0xF7	; 247
+ 692:	80 93 e8 00 	sts	0x00E8, r24
+   Usb_send_control_in();
+ 696:	80 91 e8 00 	lds	r24, 0x00E8
+ 69a:	8e 7f       	andi	r24, 0xFE	; 254
+ 69c:	80 93 e8 00 	sts	0x00E8, r24
+
+   while(!Is_usb_receive_out());
+ 6a0:	80 91 e8 00 	lds	r24, 0x00E8
+ 6a4:	82 ff       	sbrs	r24, 2
+ 6a6:	fc cf       	rjmp	.-8      	; 0x6a0 <usb_hid_set_report_ouput+0x14>
+   Usb_ack_receive_out();
+ 6a8:	80 91 e8 00 	lds	r24, 0x00E8
+ 6ac:	8b 7f       	andi	r24, 0xFB	; 251
+ 6ae:	80 93 e8 00 	sts	0x00E8, r24
+ 6b2:	80 91 e8 00 	lds	r24, 0x00E8
+ 6b6:	8f 77       	andi	r24, 0x7F	; 127
+ 6b8:	80 93 e8 00 	sts	0x00E8, r24
+   Usb_send_control_in();
+ 6bc:	80 91 e8 00 	lds	r24, 0x00E8
+ 6c0:	8e 7f       	andi	r24, 0xFE	; 254
+ 6c2:	80 93 e8 00 	sts	0x00E8, r24
+ 6c6:	08 95       	ret
+
+000006c8 <usb_hid_set_idle>:
+//!
+//! @param Duration     When the upper byte of wValue is 0 (zero), the duration is indefinite else from 0.004 to 1.020 seconds
+//! @param Report ID    0 the idle rate applies to all input reports, else only applies to the Report ID
+//!
+void usb_hid_set_idle (U8 u8_report_id, U8 u8_duration )
+{
+ 6c8:	cf 93       	push	r28
+ 6ca:	df 93       	push	r29
+ 6cc:	00 d0       	rcall	.+0      	; 0x6ce <usb_hid_set_idle+0x6>
+ 6ce:	cd b7       	in	r28, 0x3d	; 61
+ 6d0:	de b7       	in	r29, 0x3e	; 62
+   U16 wInterface;
+   
+   // Get interface number to put in idle mode
+   LSB(wInterface)=Usb_read_byte();
+ 6d2:	80 91 f1 00 	lds	r24, 0x00F1
+ 6d6:	89 83       	std	Y+1, r24	; 0x01
+   MSB(wInterface)=Usb_read_byte();
+ 6d8:	80 91 f1 00 	lds	r24, 0x00F1
+ 6dc:	8a 83       	std	Y+2, r24	; 0x02
+   Usb_ack_receive_setup();
+ 6de:	80 91 e8 00 	lds	r24, 0x00E8
+ 6e2:	87 7f       	andi	r24, 0xF7	; 247
+ 6e4:	80 93 e8 00 	sts	0x00E8, r24
+  
+   g_u8_report_rate = u8_duration;
+ 6e8:	60 93 02 01 	sts	0x0102, r22
+   
+   Usb_send_control_in();
+ 6ec:	80 91 e8 00 	lds	r24, 0x00E8
+ 6f0:	8e 7f       	andi	r24, 0xFE	; 254
+ 6f2:	80 93 e8 00 	sts	0x00E8, r24
+   while(!Is_usb_in_ready());
+ 6f6:	80 91 e8 00 	lds	r24, 0x00E8
+ 6fa:	80 ff       	sbrs	r24, 0
+ 6fc:	fc cf       	rjmp	.-8      	; 0x6f6 <usb_hid_set_idle+0x2e>
+}
+ 6fe:	0f 90       	pop	r0
+ 700:	0f 90       	pop	r0
+ 702:	df 91       	pop	r29
+ 704:	cf 91       	pop	r28
+ 706:	08 95       	ret
+
+00000708 <usb_hid_get_idle>:
+//! @brief This function manages hid get idle request.
+//!
+//! @param Report ID    0 the idle rate applies to all input reports, else only applies to the Report ID
+//!
+void usb_hid_get_idle (U8 u8_report_id)
+{
+ 708:	cf 93       	push	r28
+ 70a:	df 93       	push	r29
+ 70c:	00 d0       	rcall	.+0      	; 0x70e <usb_hid_get_idle+0x6>
+ 70e:	00 d0       	rcall	.+0      	; 0x710 <usb_hid_get_idle+0x8>
+ 710:	cd b7       	in	r28, 0x3d	; 61
+ 712:	de b7       	in	r29, 0x3e	; 62
+   U16 wLength;
+   U16 wInterface;
+
+   // Get interface number to put in idle mode
+   LSB(wInterface)= Usb_read_byte();
+ 714:	80 91 f1 00 	lds	r24, 0x00F1
+ 718:	89 83       	std	Y+1, r24	; 0x01
+   MSB(wInterface)= Usb_read_byte();
+ 71a:	80 91 f1 00 	lds	r24, 0x00F1
+ 71e:	8a 83       	std	Y+2, r24	; 0x02
+   LSB(wLength)   = Usb_read_byte();
+ 720:	80 91 f1 00 	lds	r24, 0x00F1
+ 724:	8b 83       	std	Y+3, r24	; 0x03
+   MSB(wLength)   = Usb_read_byte();
+ 726:	80 91 f1 00 	lds	r24, 0x00F1
+ 72a:	8c 83       	std	Y+4, r24	; 0x04
+   Usb_ack_receive_setup();
+ 72c:	80 91 e8 00 	lds	r24, 0x00E8
+ 730:	87 7f       	andi	r24, 0xF7	; 247
+ 732:	80 93 e8 00 	sts	0x00E8, r24
+   
+   if( wLength != 0 )
+ 736:	8b 81       	ldd	r24, Y+3	; 0x03
+ 738:	9c 81       	ldd	r25, Y+4	; 0x04
+ 73a:	89 2b       	or	r24, r25
+ 73c:	49 f0       	breq	.+18     	; 0x750 <usb_hid_get_idle+0x48>
+   {
+      Usb_write_byte(g_u8_report_rate);
+ 73e:	80 91 02 01 	lds	r24, 0x0102
+ 742:	80 93 f1 00 	sts	0x00F1, r24
+      Usb_send_control_in();
+ 746:	80 91 e8 00 	lds	r24, 0x00E8
+ 74a:	8e 7f       	andi	r24, 0xFE	; 254
+ 74c:	80 93 e8 00 	sts	0x00E8, r24
+   }
+   
+   while(!Is_usb_receive_out());
+ 750:	80 91 e8 00 	lds	r24, 0x00E8
+ 754:	82 ff       	sbrs	r24, 2
+ 756:	fc cf       	rjmp	.-8      	; 0x750 <usb_hid_get_idle+0x48>
+   Usb_ack_receive_out();
+ 758:	80 91 e8 00 	lds	r24, 0x00E8
+ 75c:	8b 7f       	andi	r24, 0xFB	; 251
+ 75e:	80 93 e8 00 	sts	0x00E8, r24
+ 762:	80 91 e8 00 	lds	r24, 0x00E8
+ 766:	8f 77       	andi	r24, 0x7F	; 127
+ 768:	80 93 e8 00 	sts	0x00E8, r24
+}
+ 76c:	0f 90       	pop	r0
+ 76e:	0f 90       	pop	r0
+ 770:	0f 90       	pop	r0
+ 772:	0f 90       	pop	r0
+ 774:	df 91       	pop	r29
+ 776:	cf 91       	pop	r28
+ 778:	08 95       	ret
+
+0000077a <hid_get_hid_descriptor>:
+
+
+//! @brief This function manages hid get hid descriptor request.
+//!
+void hid_get_hid_descriptor(void)
+{
+ 77a:	cf 93       	push	r28
+ 77c:	df 93       	push	r29
+ 77e:	00 d0       	rcall	.+0      	; 0x780 <hid_get_hid_descriptor+0x6>
+ 780:	00 d0       	rcall	.+0      	; 0x782 <hid_get_hid_descriptor+0x8>
+ 782:	cd b7       	in	r28, 0x3d	; 61
+ 784:	de b7       	in	r29, 0x3e	; 62
+   U16 wLength;
+   U8  nb_byte;
+   bit zlp=FALSE;
+   U16 wInterface;
+
+   LSB(wInterface)=Usb_read_byte();
+ 786:	80 91 f1 00 	lds	r24, 0x00F1
+ 78a:	89 83       	std	Y+1, r24	; 0x01
+   MSB(wInterface)=Usb_read_byte();
+ 78c:	80 91 f1 00 	lds	r24, 0x00F1
+ 790:	8a 83       	std	Y+2, r24	; 0x02
+
+   data_to_transfer = sizeof(usb_conf_desc.hid_kbd);
+ 792:	89 e0       	ldi	r24, 0x09	; 9
+ 794:	80 93 18 01 	sts	0x0118, r24
+   pbuffer = &(usb_conf_desc.hid_kbd.bLength);
+ 798:	82 e2       	ldi	r24, 0x22	; 34
+ 79a:	91 e0       	ldi	r25, 0x01	; 1
+ 79c:	90 93 1a 01 	sts	0x011A, r25
+ 7a0:	80 93 19 01 	sts	0x0119, r24
+
+   LSB(wLength) = Usb_read_byte();
+ 7a4:	80 91 f1 00 	lds	r24, 0x00F1
+ 7a8:	8b 83       	std	Y+3, r24	; 0x03
+   MSB(wLength) = Usb_read_byte();
+ 7aa:	80 91 f1 00 	lds	r24, 0x00F1
+ 7ae:	8c 83       	std	Y+4, r24	; 0x04
+   Usb_ack_receive_setup();
+ 7b0:	80 91 e8 00 	lds	r24, 0x00E8
+ 7b4:	87 7f       	andi	r24, 0xF7	; 247
+ 7b6:	80 93 e8 00 	sts	0x00E8, r24
+
+   if (wLength > data_to_transfer)
+ 7ba:	2b 81       	ldd	r18, Y+3	; 0x03
+ 7bc:	3c 81       	ldd	r19, Y+4	; 0x04
+ 7be:	80 91 18 01 	lds	r24, 0x0118
+ 7c2:	48 2f       	mov	r20, r24
+ 7c4:	50 e0       	ldi	r21, 0x00	; 0
+ 7c6:	42 17       	cp	r20, r18
+ 7c8:	53 07       	cpc	r21, r19
+ 7ca:	20 f4       	brcc	.+8      	; 0x7d4 <hid_get_hid_descriptor+0x5a>
+   {
+      if ((data_to_transfer % EP_CONTROL_LENGTH) == 0) { zlp = TRUE; }
+ 7cc:	8f 71       	andi	r24, 0x1F	; 31
+ 7ce:	91 e0       	ldi	r25, 0x01	; 1
+ 7d0:	b9 f0       	breq	.+46     	; 0x800 <hid_get_hid_descriptor+0x86>
+ 7d2:	02 c0       	rjmp	.+4      	; 0x7d8 <hid_get_hid_descriptor+0x5e>
+      else { zlp = FALSE; }                     // no need of zero length packet
+   }
+   else
+   {
+      data_to_transfer = (U8)wLength;           // send only requested number of data
+ 7d4:	20 93 18 01 	sts	0x0118, r18
+//!
+void hid_get_hid_descriptor(void)
+{
+   U16 wLength;
+   U8  nb_byte;
+   bit zlp=FALSE;
+ 7d8:	90 e0       	ldi	r25, 0x00	; 0
+ 7da:	12 c0       	rjmp	.+36     	; 0x800 <hid_get_hid_descriptor+0x86>
+   else
+   {
+      data_to_transfer = (U8)wLength;           // send only requested number of data
+   }
+
+   while((data_to_transfer != 0) && (!Is_usb_receive_out()))
+ 7dc:	80 91 e8 00 	lds	r24, 0x00E8
+ 7e0:	82 fd       	sbrc	r24, 2
+ 7e2:	29 c0       	rjmp	.+82     	; 0x836 <hid_get_hid_descriptor+0xbc>
+   {
+      while(!Is_usb_read_control_enabled());
+ 7e4:	80 91 e8 00 	lds	r24, 0x00E8
+ 7e8:	80 ff       	sbrs	r24, 0
+ 7ea:	fc cf       	rjmp	.-8      	; 0x7e4 <hid_get_hid_descriptor+0x6a>
+ 7ec:	81 e2       	ldi	r24, 0x21	; 33
+
+      nb_byte=0;
+      while(data_to_transfer != 0)              // Send data until necessary
+ 7ee:	20 91 18 01 	lds	r18, 0x0118
+ 7f2:	21 11       	cpse	r18, r1
+ 7f4:	0a c0       	rjmp	.+20     	; 0x80a <hid_get_hid_descriptor+0x90>
+//warning with AVRGCC assumes devices descriptors are stored in the lower 64Kbytes of on-chip flash memory
+         Usb_write_byte(pgm_read_byte_near((unsigned int)pbuffer++));
+#endif
+         data_to_transfer --;
+      }
+      Usb_send_control_in();
+ 7f6:	80 91 e8 00 	lds	r24, 0x00E8
+ 7fa:	8e 7f       	andi	r24, 0xFE	; 254
+ 7fc:	80 93 e8 00 	sts	0x00E8, r24
+   else
+   {
+      data_to_transfer = (U8)wLength;           // send only requested number of data
+   }
+
+   while((data_to_transfer != 0) && (!Is_usb_receive_out()))
+ 800:	80 91 18 01 	lds	r24, 0x0118
+ 804:	81 11       	cpse	r24, r1
+ 806:	ea cf       	rjmp	.-44     	; 0x7dc <hid_get_hid_descriptor+0x62>
+ 808:	16 c0       	rjmp	.+44     	; 0x836 <hid_get_hid_descriptor+0xbc>
+ 80a:	81 50       	subi	r24, 0x01	; 1
+      while(!Is_usb_read_control_enabled());
+
+      nb_byte=0;
+      while(data_to_transfer != 0)              // Send data until necessary
+      {
+         if(nb_byte++==EP_CONTROL_LENGTH)       // Check endpoint 0 size
+ 80c:	a1 f3       	breq	.-24     	; 0x7f6 <hid_get_hid_descriptor+0x7c>
+         }
+#ifndef __GNUC__
+         Usb_write_byte(*pbuffer++);
+#else    // AVRGCC does not support point to PGM space
+//warning with AVRGCC assumes devices descriptors are stored in the lower 64Kbytes of on-chip flash memory
+         Usb_write_byte(pgm_read_byte_near((unsigned int)pbuffer++));
+ 80e:	e0 91 19 01 	lds	r30, 0x0119
+ 812:	f0 91 1a 01 	lds	r31, 0x011A
+ 816:	9f 01       	movw	r18, r30
+ 818:	2f 5f       	subi	r18, 0xFF	; 255
+ 81a:	3f 4f       	sbci	r19, 0xFF	; 255
+ 81c:	30 93 1a 01 	sts	0x011A, r19
+ 820:	20 93 19 01 	sts	0x0119, r18
+ 824:	e4 91       	lpm	r30, Z
+ 826:	e0 93 f1 00 	sts	0x00F1, r30
+#endif
+         data_to_transfer --;
+ 82a:	20 91 18 01 	lds	r18, 0x0118
+ 82e:	21 50       	subi	r18, 0x01	; 1
+ 830:	20 93 18 01 	sts	0x0118, r18
+ 834:	dc cf       	rjmp	.-72     	; 0x7ee <hid_get_hid_descriptor+0x74>
+      }
+      Usb_send_control_in();
+   }
+
+   if(Is_usb_receive_out())
+ 836:	80 91 e8 00 	lds	r24, 0x00E8
+ 83a:	82 fd       	sbrc	r24, 2
+ 83c:	0f c0       	rjmp	.+30     	; 0x85c <hid_get_hid_descriptor+0xe2>
+   { 
+      // abort from Host
+      Usb_ack_receive_out();
+      return;
+   }
+   if(zlp == TRUE)
+ 83e:	91 30       	cpi	r25, 0x01	; 1
+ 840:	49 f4       	brne	.+18     	; 0x854 <hid_get_hid_descriptor+0xda>
+   { 
+      while(!Is_usb_read_control_enabled());
+ 842:	80 91 e8 00 	lds	r24, 0x00E8
+ 846:	80 ff       	sbrs	r24, 0
+ 848:	fc cf       	rjmp	.-8      	; 0x842 <hid_get_hid_descriptor+0xc8>
+      Usb_send_control_in();
+ 84a:	80 91 e8 00 	lds	r24, 0x00E8
+ 84e:	8e 7f       	andi	r24, 0xFE	; 254
+ 850:	80 93 e8 00 	sts	0x00E8, r24
+   }
+
+   while(!Is_usb_receive_out());
+ 854:	80 91 e8 00 	lds	r24, 0x00E8
+ 858:	82 ff       	sbrs	r24, 2
+ 85a:	fc cf       	rjmp	.-8      	; 0x854 <hid_get_hid_descriptor+0xda>
+   Usb_ack_receive_out();
+ 85c:	80 91 e8 00 	lds	r24, 0x00E8
+ 860:	8b 7f       	andi	r24, 0xFB	; 251
+ 862:	80 93 e8 00 	sts	0x00E8, r24
+ 866:	80 91 e8 00 	lds	r24, 0x00E8
+ 86a:	8f 77       	andi	r24, 0x7F	; 127
+ 86c:	80 93 e8 00 	sts	0x00E8, r24
+}
+ 870:	0f 90       	pop	r0
+ 872:	0f 90       	pop	r0
+ 874:	0f 90       	pop	r0
+ 876:	0f 90       	pop	r0
+ 878:	df 91       	pop	r29
+ 87a:	cf 91       	pop	r28
+ 87c:	08 95       	ret
+
+0000087e <usb_user_read_request>:
+//!
+//! @return TRUE,  when the request is processed
+//! @return FALSE, if the request is'nt know (STALL handshake is managed by the main standard request function).
+//!
+Bool usb_user_read_request(U8 type, U8 request)
+{
+ 87e:	28 2f       	mov	r18, r24
+ 880:	96 2f       	mov	r25, r22
+   U8    wValue_msb;
+   U8    wValue_lsb;
+
+   // Read wValue
+   wValue_lsb = Usb_read_byte();
+ 882:	80 91 f1 00 	lds	r24, 0x00F1
+   wValue_msb = Usb_read_byte();
+ 886:	60 91 f1 00 	lds	r22, 0x00F1
+
+   //** Specific request from Class HID
+   if( USB_SETUP_GET_STAND_INTERFACE == type )
+ 88a:	21 38       	cpi	r18, 0x81	; 129
+ 88c:	61 f4       	brne	.+24     	; 0x8a6 <usb_user_read_request+0x28>
+   {
+      switch( request )
+ 88e:	96 30       	cpi	r25, 0x06	; 6
+ 890:	01 f5       	brne	.+64     	; 0x8d2 <usb_user_read_request+0x54>
+      {
+         case SETUP_GET_DESCRIPTOR:
+         switch( wValue_msb ) // Descriptor ID
+ 892:	61 32       	cpi	r22, 0x21	; 33
+ 894:	29 f0       	breq	.+10     	; 0x8a0 <usb_user_read_request+0x22>
+ 896:	62 32       	cpi	r22, 0x22	; 34
+ 898:	e1 f4       	brne	.+56     	; 0x8d2 <usb_user_read_request+0x54>
+            hid_get_hid_descriptor();
+            return TRUE;
+            break;
+   
+            case DESCRIPTOR_REPORT:
+            hid_get_report_descriptor();
+ 89a:	0e 94 c4 02 	call	0x588	; 0x588 <hid_get_report_descriptor>
+ 89e:	17 c0       	rjmp	.+46     	; 0x8ce <usb_user_read_request+0x50>
+      {
+         case SETUP_GET_DESCRIPTOR:
+         switch( wValue_msb ) // Descriptor ID
+         {
+            case DESCRIPTOR_HID:
+            hid_get_hid_descriptor();
+ 8a0:	0e 94 bd 03 	call	0x77a	; 0x77a <hid_get_hid_descriptor>
+ 8a4:	14 c0       	rjmp	.+40     	; 0x8ce <usb_user_read_request+0x50>
+            break;
+         }
+         break;
+      }
+   }
+   if( USB_SETUP_SET_CLASS_INTER == type )
+ 8a6:	21 32       	cpi	r18, 0x21	; 33
+ 8a8:	61 f4       	brne	.+24     	; 0x8c2 <usb_user_read_request+0x44>
+   {
+      switch( request )
+ 8aa:	99 30       	cpi	r25, 0x09	; 9
+ 8ac:	29 f0       	breq	.+10     	; 0x8b8 <usb_user_read_request+0x3a>
+ 8ae:	9a 30       	cpi	r25, 0x0A	; 10
+ 8b0:	81 f4       	brne	.+32     	; 0x8d2 <usb_user_read_request+0x54>
+            break;
+         }
+         break;
+
+         case SETUP_HID_SET_IDLE:
+         usb_hid_set_idle(wValue_lsb,wValue_msb);
+ 8b2:	0e 94 64 03 	call	0x6c8	; 0x6c8 <usb_hid_set_idle>
+ 8b6:	0b c0       	rjmp	.+22     	; 0x8ce <usb_user_read_request+0x50>
+      switch( request )
+      {
+         case SETUP_HID_SET_REPORT:
+         // The MSB wValue field specifies the Report Type
+         // The LSB wValue field specifies the Report ID
+         switch (wValue_msb)
+ 8b8:	62 30       	cpi	r22, 0x02	; 2
+ 8ba:	59 f4       	brne	.+22     	; 0x8d2 <usb_user_read_request+0x54>
+            case REPORT_TYPE_INPUT:
+            // TODO
+            break;
+            
+            case REPORT_TYPE_OUTPUT:
+            usb_hid_set_report_ouput();
+ 8bc:	0e 94 46 03 	call	0x68c	; 0x68c <usb_hid_set_report_ouput>
+ 8c0:	06 c0       	rjmp	.+12     	; 0x8ce <usb_user_read_request+0x50>
+         case SETUP_HID_SET_PROTOCOL:
+         // TODO if you use a sub class HID_SUB_CLASS_BOOT
+         break;
+      }
+   }
+   if( USB_SETUP_GET_CLASS_INTER == type )
+ 8c2:	21 3a       	cpi	r18, 0xA1	; 161
+ 8c4:	31 f4       	brne	.+12     	; 0x8d2 <usb_user_read_request+0x54>
+   {
+      switch( request )
+ 8c6:	92 30       	cpi	r25, 0x02	; 2
+ 8c8:	21 f4       	brne	.+8      	; 0x8d2 <usb_user_read_request+0x54>
+      {
+         case SETUP_HID_GET_REPORT:
+         // TODO
+         break;
+         case SETUP_HID_GET_IDLE:
+         usb_hid_get_idle(wValue_lsb);
+ 8ca:	0e 94 84 03 	call	0x708	; 0x708 <usb_hid_get_idle>
+         return TRUE;
+ 8ce:	81 e0       	ldi	r24, 0x01	; 1
+ 8d0:	08 95       	ret
+         case SETUP_HID_GET_PROTOCOL:
+         // TODO if you use a sub class HID_SUB_CLASS_BOOT
+         break;
+      }
+   }
+   return FALSE;  // No supported request
+ 8d2:	80 e0       	ldi	r24, 0x00	; 0
+}
+ 8d4:	08 95       	ret
+
+000008d6 <usb_process_request>:
+//! @brief This function reads the SETUP request sent to the default control endpoint
+//! and calls the appropriate function. When exiting of the usb_read_request
+//! function, the device is ready to manage the next request.
+//!
+void usb_process_request(void)
+{
+ 8d6:	0f 93       	push	r16
+ 8d8:	1f 93       	push	r17
+ 8da:	cf 93       	push	r28
+ 8dc:	df 93       	push	r29
+ 8de:	00 d0       	rcall	.+0      	; 0x8e0 <usb_process_request+0xa>
+ 8e0:	cd b7       	in	r28, 0x3d	; 61
+ 8e2:	de b7       	in	r29, 0x3e	; 62
+   U8 bmRequestType;
+   U8 bmRequest;
+
+   Usb_ack_control_out();
+ 8e4:	80 91 e8 00 	lds	r24, 0x00E8
+ 8e8:	8b 7f       	andi	r24, 0xFB	; 251
+ 8ea:	80 93 e8 00 	sts	0x00E8, r24
+   bmRequestType = Usb_read_byte();
+ 8ee:	10 91 f1 00 	lds	r17, 0x00F1
+   bmRequest     = Usb_read_byte();
+ 8f2:	00 91 f1 00 	lds	r16, 0x00F1
+
+   switch (bmRequest)
+ 8f6:	80 2f       	mov	r24, r16
+ 8f8:	90 e0       	ldi	r25, 0x00	; 0
+ 8fa:	8c 30       	cpi	r24, 0x0C	; 12
+ 8fc:	91 05       	cpc	r25, r1
+ 8fe:	08 f0       	brcs	.+2      	; 0x902 <usb_process_request+0x2c>
+ 900:	fa c1       	rjmp	.+1012   	; 0xcf6 <usb_process_request+0x420>
+ 902:	fc 01       	movw	r30, r24
+ 904:	e6 5c       	subi	r30, 0xC6	; 198
+ 906:	ff 4f       	sbci	r31, 0xFF	; 255
+ 908:	0c 94 f4 07 	jmp	0xfe8	; 0xfe8 <__tablejump2__>
+   {
+      case SETUP_GET_DESCRIPTOR:
+      if (USB_SETUP_GET_STAND_DEVICE == bmRequestType)
+ 90c:	10 38       	cpi	r17, 0x80	; 128
+ 90e:	09 f0       	breq	.+2      	; 0x912 <usb_process_request+0x3c>
+ 910:	f2 c1       	rjmp	.+996    	; 0xcf6 <usb_process_request+0x420>
+   U16  sn_index=0;
+   U8   initial_data_to_transfer;
+#endif
+    
+   zlp             = FALSE;                  /* no zero length packet */
+   string_type     = Usb_read_byte();        /* read LSB of wValue    */
+ 912:	60 91 f1 00 	lds	r22, 0x00F1
+   descriptor_type = Usb_read_byte();        /* read MSB of wValue    */
+ 916:	80 91 f1 00 	lds	r24, 0x00F1
+
+   switch (descriptor_type)
+ 91a:	81 30       	cpi	r24, 0x01	; 1
+ 91c:	41 f0       	breq	.+16     	; 0x92e <usb_process_request+0x58>
+ 91e:	82 30       	cpi	r24, 0x02	; 2
+ 920:	81 f4       	brne	.+32     	; 0x942 <usb_process_request+0x6c>
+      data_to_transfer = Usb_get_dev_desc_length(); //!< sizeof (usb_user_device_descriptor);
+      pbuffer          = Usb_get_dev_desc_pointer();
+      break;
+      
+      case DESCRIPTOR_CONFIGURATION:
+      data_to_transfer = Usb_get_conf_desc_length(); //!< sizeof (usb_user_configuration_descriptor);
+ 922:	82 e2       	ldi	r24, 0x22	; 34
+ 924:	80 93 18 01 	sts	0x0118, r24
+      pbuffer          = Usb_get_conf_desc_pointer();
+ 928:	80 e1       	ldi	r24, 0x10	; 16
+ 92a:	91 e0       	ldi	r25, 0x01	; 1
+ 92c:	05 c0       	rjmp	.+10     	; 0x938 <usb_process_request+0x62>
+   descriptor_type = Usb_read_byte();        /* read MSB of wValue    */
+
+   switch (descriptor_type)
+   {
+      case DESCRIPTOR_DEVICE:
+      data_to_transfer = Usb_get_dev_desc_length(); //!< sizeof (usb_user_device_descriptor);
+ 92e:	82 e1       	ldi	r24, 0x12	; 18
+ 930:	80 93 18 01 	sts	0x0118, r24
+      pbuffer          = Usb_get_dev_desc_pointer();
+ 934:	82 e3       	ldi	r24, 0x32	; 50
+ 936:	91 e0       	ldi	r25, 0x01	; 1
+      break;
+      
+      case DESCRIPTOR_CONFIGURATION:
+      data_to_transfer = Usb_get_conf_desc_length(); //!< sizeof (usb_user_configuration_descriptor);
+      pbuffer          = Usb_get_conf_desc_pointer();
+ 938:	90 93 1a 01 	sts	0x011A, r25
+ 93c:	80 93 19 01 	sts	0x0119, r24
+ 940:	05 c0       	rjmp	.+10     	; 0x94c <usb_process_request+0x76>
+      break;
+      
+      default:
+      if( !usb_user_get_descriptor(descriptor_type, string_type))
+ 942:	0e 94 a4 02 	call	0x548	; 0x548 <usb_user_get_descriptor>
+ 946:	88 23       	and	r24, r24
+ 948:	09 f4       	brne	.+2      	; 0x94c <usb_process_request+0x76>
+ 94a:	d5 c1       	rjmp	.+938    	; 0xcf6 <usb_process_request+0x420>
+         return FALSE;  // Unknow descriptor then stall request
+      break;
+   }
+
+   dummy = Usb_read_byte();                     //!< don't care of wIndex field
+ 94c:	80 91 f1 00 	lds	r24, 0x00F1
+   dummy = Usb_read_byte();
+ 950:	80 91 f1 00 	lds	r24, 0x00F1
+   LSB(wLength) = Usb_read_byte();              //!< read wLength
+ 954:	80 91 f1 00 	lds	r24, 0x00F1
+ 958:	89 83       	std	Y+1, r24	; 0x01
+   MSB(wLength) = Usb_read_byte();
+ 95a:	80 91 f1 00 	lds	r24, 0x00F1
+ 95e:	8a 83       	std	Y+2, r24	; 0x02
+   Usb_ack_receive_setup() ;                  //!< clear the receive setup flag
+ 960:	80 91 e8 00 	lds	r24, 0x00E8
+ 964:	87 7f       	andi	r24, 0xF7	; 247
+ 966:	80 93 e8 00 	sts	0x00E8, r24
+
+   if (wLength > data_to_transfer)
+ 96a:	29 81       	ldd	r18, Y+1	; 0x01
+ 96c:	3a 81       	ldd	r19, Y+2	; 0x02
+ 96e:	80 91 18 01 	lds	r24, 0x0118
+ 972:	48 2f       	mov	r20, r24
+ 974:	50 e0       	ldi	r21, 0x00	; 0
+ 976:	42 17       	cp	r20, r18
+ 978:	53 07       	cpc	r21, r19
+ 97a:	20 f4       	brcc	.+8      	; 0x984 <usb_process_request+0xae>
+   {
+      if ((data_to_transfer % EP_CONTROL_LENGTH) == 0) { zlp = TRUE; }
+ 97c:	8f 71       	andi	r24, 0x1F	; 31
+ 97e:	91 e0       	ldi	r25, 0x01	; 1
+ 980:	21 f0       	breq	.+8      	; 0x98a <usb_process_request+0xb4>
+ 982:	02 c0       	rjmp	.+4      	; 0x988 <usb_process_request+0xb2>
+      else { zlp = FALSE; }                   //!< no need of zero length packet
+   }
+   else
+   {
+      data_to_transfer = (U8)wLength;         //!< send only requested number of data
+ 984:	20 93 18 01 	sts	0x0118, r18
+#if (USE_DEVICE_SN_UNIQUE==ENABLE)
+   U16  sn_index=0;
+   U8   initial_data_to_transfer;
+#endif
+    
+   zlp             = FALSE;                  /* no zero length packet */
+ 988:	90 e0       	ldi	r25, 0x00	; 0
+   else
+   {
+      data_to_transfer = (U8)wLength;         //!< send only requested number of data
+   }
+
+   Usb_ack_nak_out();
+ 98a:	80 91 e8 00 	lds	r24, 0x00E8
+ 98e:	8f 7e       	andi	r24, 0xEF	; 239
+      }
+      
+      if (Is_usb_nak_out_sent())
+         break;
+      else
+         Usb_send_control_in();
+ 990:	80 93 e8 00 	sts	0x00E8, r24
+    
+   byte_to_send=0;
+#if (USE_DEVICE_SN_UNIQUE==ENABLE)
+   initial_data_to_transfer = data_to_transfer;
+#endif
+   while((data_to_transfer != 0) && (!Is_usb_nak_out_sent()))
+ 994:	80 91 18 01 	lds	r24, 0x0118
+ 998:	81 11       	cpse	r24, r1
+ 99a:	04 c0       	rjmp	.+8      	; 0x9a4 <usb_process_request+0xce>
+   
+#if (USE_DEVICE_SN_UNIQUE==ENABLE)      
+   f_get_serial_string=FALSE;                                                   //end of signature transmission    
+#endif   
+
+   if((zlp == TRUE) && (!Is_usb_nak_out_sent()))
+ 99c:	91 30       	cpi	r25, 0x01	; 1
+ 99e:	09 f0       	breq	.+2      	; 0x9a2 <usb_process_request+0xcc>
+ 9a0:	3d c0       	rjmp	.+122    	; 0xa1c <usb_process_request+0x146>
+ 9a2:	2f c0       	rjmp	.+94     	; 0xa02 <usb_process_request+0x12c>
+    
+   byte_to_send=0;
+#if (USE_DEVICE_SN_UNIQUE==ENABLE)
+   initial_data_to_transfer = data_to_transfer;
+#endif
+   while((data_to_transfer != 0) && (!Is_usb_nak_out_sent()))
+ 9a4:	80 91 e8 00 	lds	r24, 0x00E8
+ 9a8:	84 fd       	sbrc	r24, 4
+ 9aa:	f8 cf       	rjmp	.-16     	; 0x99c <usb_process_request+0xc6>
+   {
+      while(!Is_usb_read_control_enabled())
+ 9ac:	80 91 e8 00 	lds	r24, 0x00E8
+ 9b0:	80 fd       	sbrc	r24, 0
+ 9b2:	04 c0       	rjmp	.+8      	; 0x9bc <usb_process_request+0xe6>
+      {
+         if (Is_usb_nak_out_sent())
+ 9b4:	80 91 e8 00 	lds	r24, 0x00E8
+ 9b8:	84 ff       	sbrs	r24, 4
+ 9ba:	f8 cf       	rjmp	.-16     	; 0x9ac <usb_process_request+0xd6>
+ 9bc:	81 e2       	ldi	r24, 0x21	; 33
+            break;    // don't clear the flag now, it will be cleared after
+      }
+              
+      nb_byte=0;
+      while(data_to_transfer != 0)        //!< Send data until necessary
+ 9be:	20 91 18 01 	lds	r18, 0x0118
+ 9c2:	22 23       	and	r18, r18
+ 9c4:	b1 f0       	breq	.+44     	; 0x9f2 <usb_process_request+0x11c>
+ 9c6:	81 50       	subi	r24, 0x01	; 1
+      {
+         if(nb_byte++==EP_CONTROL_LENGTH) //!< Check endpoint 0 size
+ 9c8:	a1 f0       	breq	.+40     	; 0x9f2 <usb_process_request+0x11c>
+         else
+         {
+            Usb_write_PGM_byte(pbuffer++);                                                 //Write a flash byte to USB        
+         }        
+#else          
+         Usb_write_PGM_byte(pbuffer++);          
+ 9ca:	e0 91 19 01 	lds	r30, 0x0119
+ 9ce:	f0 91 1a 01 	lds	r31, 0x011A
+ 9d2:	9f 01       	movw	r18, r30
+ 9d4:	2f 5f       	subi	r18, 0xFF	; 255
+ 9d6:	3f 4f       	sbci	r19, 0xFF	; 255
+ 9d8:	30 93 1a 01 	sts	0x011A, r19
+ 9dc:	20 93 19 01 	sts	0x0119, r18
+ 9e0:	e4 91       	lpm	r30, Z
+ 9e2:	e0 93 f1 00 	sts	0x00F1, r30
+#endif
+         data_to_transfer --;                                                             //decrements the number of bytes to transmit.
+ 9e6:	20 91 18 01 	lds	r18, 0x0118
+ 9ea:	21 50       	subi	r18, 0x01	; 1
+ 9ec:	20 93 18 01 	sts	0x0118, r18
+ 9f0:	e6 cf       	rjmp	.-52     	; 0x9be <usb_process_request+0xe8>
+      }
+      
+      if (Is_usb_nak_out_sent())
+ 9f2:	80 91 e8 00 	lds	r24, 0x00E8
+ 9f6:	84 fd       	sbrc	r24, 4
+ 9f8:	d1 cf       	rjmp	.-94     	; 0x99c <usb_process_request+0xc6>
+         break;
+      else
+         Usb_send_control_in();
+ 9fa:	80 91 e8 00 	lds	r24, 0x00E8
+ 9fe:	8e 7f       	andi	r24, 0xFE	; 254
+ a00:	c7 cf       	rjmp	.-114    	; 0x990 <usb_process_request+0xba>
+   
+#if (USE_DEVICE_SN_UNIQUE==ENABLE)      
+   f_get_serial_string=FALSE;                                                   //end of signature transmission    
+#endif   
+
+   if((zlp == TRUE) && (!Is_usb_nak_out_sent()))
+ a02:	80 91 e8 00 	lds	r24, 0x00E8
+ a06:	84 fd       	sbrc	r24, 4
+ a08:	09 c0       	rjmp	.+18     	; 0xa1c <usb_process_request+0x146>
+   {
+      while(!Is_usb_read_control_enabled());
+ a0a:	80 91 e8 00 	lds	r24, 0x00E8
+ a0e:	80 ff       	sbrs	r24, 0
+ a10:	fc cf       	rjmp	.-8      	; 0xa0a <usb_process_request+0x134>
+      Usb_send_control_in();
+ a12:	80 91 e8 00 	lds	r24, 0x00E8
+ a16:	8e 7f       	andi	r24, 0xFE	; 254
+ a18:	80 93 e8 00 	sts	0x00E8, r24
+   }
+
+   while (!(Is_usb_nak_out_sent()));
+ a1c:	80 91 e8 00 	lds	r24, 0x00E8
+ a20:	84 ff       	sbrs	r24, 4
+ a22:	fc cf       	rjmp	.-8      	; 0xa1c <usb_process_request+0x146>
+   Usb_ack_nak_out();
+ a24:	80 91 e8 00 	lds	r24, 0x00E8
+ a28:	8f 7e       	andi	r24, 0xEF	; 239
+ a2a:	80 93 e8 00 	sts	0x00E8, r24
+   Usb_ack_control_out();
+ a2e:	80 91 e8 00 	lds	r24, 0x00E8
+ a32:	8b 7f       	andi	r24, 0xFB	; 251
+ a34:	22 c0       	rjmp	.+68     	; 0xa7a <usb_process_request+0x1a4>
+            return;
+      }
+      break;
+
+      case SETUP_GET_CONFIGURATION:
+      if (USB_SETUP_GET_STAND_DEVICE == bmRequestType)
+ a36:	10 38       	cpi	r17, 0x80	; 128
+ a38:	09 f0       	breq	.+2      	; 0xa3c <usb_process_request+0x166>
+ a3a:	5d c1       	rjmp	.+698    	; 0xcf6 <usb_process_request+0x420>
+//! This function manages the GET CONFIGURATION request. The current
+//! configuration number is returned.
+//!
+void usb_get_configuration(void)
+{
+   Usb_ack_receive_setup();
+ a3c:	80 91 e8 00 	lds	r24, 0x00E8
+ a40:	87 7f       	andi	r24, 0xF7	; 247
+ a42:	80 93 e8 00 	sts	0x00E8, r24
+
+   Usb_write_byte(usb_configuration_nb);
+ a46:	80 91 17 01 	lds	r24, 0x0117
+ a4a:	80 93 f1 00 	sts	0x00F1, r24
+   Usb_ack_in_ready();
+ a4e:	80 91 e8 00 	lds	r24, 0x00E8
+ a52:	8e 7f       	andi	r24, 0xFE	; 254
+ a54:	80 93 e8 00 	sts	0x00E8, r24
+ a58:	80 91 e8 00 	lds	r24, 0x00E8
+ a5c:	8f 77       	andi	r24, 0x7F	; 127
+ a5e:	80 93 e8 00 	sts	0x00E8, r24
+
+   while( !Is_usb_receive_out() );
+ a62:	80 91 e8 00 	lds	r24, 0x00E8
+ a66:	82 ff       	sbrs	r24, 2
+ a68:	fc cf       	rjmp	.-8      	; 0xa62 <usb_process_request+0x18c>
+   Usb_ack_receive_out();
+ a6a:	80 91 e8 00 	lds	r24, 0x00E8
+ a6e:	8b 7f       	andi	r24, 0xFB	; 251
+ a70:	80 93 e8 00 	sts	0x00E8, r24
+ a74:	80 91 e8 00 	lds	r24, 0x00E8
+ a78:	8f 77       	andi	r24, 0x7F	; 127
+ a7a:	80 93 e8 00 	sts	0x00E8, r24
+ a7e:	4e c1       	rjmp	.+668    	; 0xd1c <usb_process_request+0x446>
+         return;
+      }
+      break;
+
+      case SETUP_SET_ADDRESS:
+      if (USB_SETUP_SET_STAND_DEVICE == bmRequestType)
+ a80:	11 11       	cpse	r17, r1
+ a82:	39 c1       	rjmp	.+626    	; 0xcf6 <usb_process_request+0x420>
+//! This function manages the SET ADDRESS request. When complete, the device
+//! will filter the requests using the new address.
+//!
+void usb_set_address(void)
+{
+   U8 addr = Usb_read_byte();
+ a84:	90 91 f1 00 	lds	r25, 0x00F1
+   Usb_configure_address(addr);
+ a88:	80 91 e3 00 	lds	r24, 0x00E3
+ a8c:	9f 77       	andi	r25, 0x7F	; 127
+ a8e:	80 78       	andi	r24, 0x80	; 128
+ a90:	89 2b       	or	r24, r25
+ a92:	80 93 e3 00 	sts	0x00E3, r24
+
+   Usb_ack_receive_setup();
+ a96:	80 91 e8 00 	lds	r24, 0x00E8
+ a9a:	87 7f       	andi	r24, 0xF7	; 247
+ a9c:	80 93 e8 00 	sts	0x00E8, r24
+
+   Usb_send_control_in();                    // send a ZLP for STATUS phase
+ aa0:	80 91 e8 00 	lds	r24, 0x00E8
+ aa4:	8e 7f       	andi	r24, 0xFE	; 254
+ aa6:	80 93 e8 00 	sts	0x00E8, r24
+   while(!Is_usb_in_ready());                // waits for status phase done
+ aaa:	80 91 e8 00 	lds	r24, 0x00E8
+ aae:	80 ff       	sbrs	r24, 0
+ ab0:	fc cf       	rjmp	.-8      	; 0xaaa <usb_process_request+0x1d4>
+                                             // before using the new address
+   Usb_enable_address();
+ ab2:	80 91 e3 00 	lds	r24, 0x00E3
+ ab6:	80 68       	ori	r24, 0x80	; 128
+ ab8:	80 93 e3 00 	sts	0x00E3, r24
+ abc:	2f c1       	rjmp	.+606    	; 0xd1c <usb_process_request+0x446>
+         return;
+      }
+      break;
+
+      case SETUP_SET_CONFIGURATION:
+      if (USB_SETUP_SET_STAND_DEVICE == bmRequestType)
+ abe:	11 11       	cpse	r17, r1
+ ac0:	1a c1       	rjmp	.+564    	; 0xcf6 <usb_process_request+0x420>
+Bool usb_set_configuration( void )
+{
+   U8 configuration_number;
+
+   // Get/Check new configuration
+   configuration_number = Usb_read_byte();
+ ac2:	90 91 f1 00 	lds	r25, 0x00F1
+   if (configuration_number > NB_CONFIGURATION)
+ ac6:	92 30       	cpi	r25, 0x02	; 2
+ ac8:	08 f0       	brcs	.+2      	; 0xacc <usb_process_request+0x1f6>
+ aca:	15 c1       	rjmp	.+554    	; 0xcf6 <usb_process_request+0x420>
+      return FALSE;  //  Bad configuration number then stall request
+   Usb_ack_receive_setup();
+ acc:	80 91 e8 00 	lds	r24, 0x00E8
+ ad0:	87 7f       	andi	r24, 0xF7	; 247
+ ad2:	80 93 e8 00 	sts	0x00E8, r24
+   usb_configuration_nb = configuration_number;
+ ad6:	90 93 17 01 	sts	0x0117, r25
+   
+   Usb_send_control_in();                          // send a ZLP for STATUS phase
+ ada:	80 91 e8 00 	lds	r24, 0x00E8
+ ade:	8e 7f       	andi	r24, 0xFE	; 254
+ ae0:	80 93 e8 00 	sts	0x00E8, r24
+   usb_user_endpoint_init(usb_configuration_nb);   // endpoint configuration
+ ae4:	80 91 17 01 	lds	r24, 0x0117
+      // OUT request following the SETUP may be acknowledged
+      Usb_enable_stall_handshake();
+      Usb_ack_receive_setup();
+      endpoint_status[(EP_CONTROL & MSK_EP_DIR)] = 0x01;
+   }
+}
+ ae8:	0f 90       	pop	r0
+ aea:	0f 90       	pop	r0
+ aec:	df 91       	pop	r29
+ aee:	cf 91       	pop	r28
+ af0:	1f 91       	pop	r17
+ af2:	0f 91       	pop	r16
+      return FALSE;  //  Bad configuration number then stall request
+   Usb_ack_receive_setup();
+   usb_configuration_nb = configuration_number;
+   
+   Usb_send_control_in();                          // send a ZLP for STATUS phase
+   usb_user_endpoint_init(usb_configuration_nb);   // endpoint configuration
+ af4:	0c 94 86 02 	jmp	0x50c	; 0x50c <usb_user_endpoint_init>
+{
+   U8 wValue;
+   U8 wIndex;
+   U8 dummy;
+
+   switch (bmRequestType)
+ af8:	11 23       	and	r17, r17
+ afa:	19 f0       	breq	.+6      	; 0xb02 <usb_process_request+0x22c>
+ afc:	12 30       	cpi	r17, 0x02	; 2
+ afe:	71 f0       	breq	.+28     	; 0xb1c <usb_process_request+0x246>
+ b00:	fa c0       	rjmp	.+500    	; 0xcf6 <usb_process_request+0x420>
+   {
+      case  USB_SETUP_SET_STAND_DEVICE:
+      wValue = Usb_read_byte();
+ b02:	80 91 f1 00 	lds	r24, 0x00F1
+      if ((wValue != FEATURE_DEVICE_REMOTE_WAKEUP) || (USB_REMOTE_WAKEUP_FEATURE != ENABLED))
+ b06:	81 30       	cpi	r24, 0x01	; 1
+ b08:	09 f0       	breq	.+2      	; 0xb0c <usb_process_request+0x236>
+ b0a:	f5 c0       	rjmp	.+490    	; 0xcf6 <usb_process_request+0x420>
+         return FALSE;              // Invalid request
+      device_status &= ~USB_DEVICE_STATUS_REMOTEWAKEUP;
+ b0c:	80 91 03 01 	lds	r24, 0x0103
+ b10:	8d 7f       	andi	r24, 0xFD	; 253
+ b12:	80 93 03 01 	sts	0x0103, r24
+      remote_wakeup_feature = DISABLED;
+ b16:	10 92 04 01 	sts	0x0104, r1
+ b1a:	68 c0       	rjmp	.+208    	; 0xbec <usb_process_request+0x316>
+      case USB_SETUP_SET_STAND_INTERFACE:
+      return FALSE;                    // Unknow request
+      break;
+      
+      case USB_SETUP_SET_STAND_ENDPOINT:
+      wValue = Usb_read_byte();
+ b1c:	80 91 f1 00 	lds	r24, 0x00F1
+      dummy  = Usb_read_byte();
+ b20:	90 91 f1 00 	lds	r25, 0x00F1
+      if (wValue != FEATURE_ENDPOINT_HALT)
+ b24:	81 11       	cpse	r24, r1
+ b26:	e7 c0       	rjmp	.+462    	; 0xcf6 <usb_process_request+0x420>
+         return FALSE;                 // Unknow request
+      wIndex = (Usb_read_byte() & MSK_EP_DIR);
+ b28:	e0 91 f1 00 	lds	r30, 0x00F1
+ b2c:	ef 77       	andi	r30, 0x7F	; 127
+      Usb_select_endpoint(wIndex);
+ b2e:	e0 93 e9 00 	sts	0x00E9, r30
+      if( !Is_usb_endpoint_enabled())
+ b32:	80 91 eb 00 	lds	r24, 0x00EB
+ b36:	80 ff       	sbrs	r24, 0
+ b38:	4a c0       	rjmp	.+148    	; 0xbce <usb_process_request+0x2f8>
+      {
+         Usb_select_endpoint(EP_CONTROL);
+         return FALSE;              // Invalid request
+      } 
+      if(wIndex != EP_CONTROL)
+ b3a:	ee 23       	and	r30, r30
+ b3c:	a9 f0       	breq	.+42     	; 0xb68 <usb_process_request+0x292>
+      {
+         Usb_disable_stall_handshake();
+ b3e:	80 91 eb 00 	lds	r24, 0x00EB
+ b42:	80 61       	ori	r24, 0x10	; 16
+ b44:	80 93 eb 00 	sts	0x00EB, r24
+         Usb_reset_endpoint(wIndex);
+ b48:	81 e0       	ldi	r24, 0x01	; 1
+ b4a:	90 e0       	ldi	r25, 0x00	; 0
+ b4c:	0e 2e       	mov	r0, r30
+ b4e:	01 c0       	rjmp	.+2      	; 0xb52 <usb_process_request+0x27c>
+ b50:	88 0f       	add	r24, r24
+ b52:	0a 94       	dec	r0
+ b54:	ea f7       	brpl	.-6      	; 0xb50 <usb_process_request+0x27a>
+ b56:	80 93 ea 00 	sts	0x00EA, r24
+ b5a:	10 92 ea 00 	sts	0x00EA, r1
+         Usb_reset_data_toggle();
+ b5e:	80 91 eb 00 	lds	r24, 0x00EB
+ b62:	88 60       	ori	r24, 0x08	; 8
+ b64:	80 93 eb 00 	sts	0x00EB, r24
+      }
+      Usb_select_endpoint(EP_CONTROL);
+ b68:	10 92 e9 00 	sts	0x00E9, r1
+      endpoint_status[wIndex] = 0x00;
+ b6c:	f0 e0       	ldi	r31, 0x00	; 0
+ b6e:	e0 5f       	subi	r30, 0xF0	; 240
+ b70:	fe 4f       	sbci	r31, 0xFE	; 254
+ b72:	10 82       	st	Z, r1
+ b74:	3b c0       	rjmp	.+118    	; 0xbec <usb_process_request+0x316>
+{
+   U8 wValue;
+   U8 wIndex;
+   U8 dummy;
+
+   switch (bmRequestType)
+ b76:	11 23       	and	r17, r17
+ b78:	19 f0       	breq	.+6      	; 0xb80 <usb_process_request+0x2aa>
+ b7a:	12 30       	cpi	r17, 0x02	; 2
+ b7c:	71 f0       	breq	.+28     	; 0xb9a <usb_process_request+0x2c4>
+ b7e:	bb c0       	rjmp	.+374    	; 0xcf6 <usb_process_request+0x420>
+   {
+      case USB_SETUP_SET_STAND_DEVICE:
+      wValue = Usb_read_byte();
+ b80:	90 91 f1 00 	lds	r25, 0x00F1
+      switch (wValue)
+ b84:	91 30       	cpi	r25, 0x01	; 1
+ b86:	09 f0       	breq	.+2      	; 0xb8a <usb_process_request+0x2b4>
+ b88:	b6 c0       	rjmp	.+364    	; 0xcf6 <usb_process_request+0x420>
+      {
+         case USB_REMOTE_WAKEUP:
+         if ((wValue != FEATURE_DEVICE_REMOTE_WAKEUP)
+         ||  (USB_REMOTE_WAKEUP_FEATURE != ENABLED))
+            return FALSE;              // Invalid request
+         device_status |= USB_DEVICE_STATUS_REMOTEWAKEUP;
+ b8a:	80 91 03 01 	lds	r24, 0x0103
+ b8e:	82 60       	ori	r24, 0x02	; 2
+ b90:	80 93 03 01 	sts	0x0103, r24
+         remote_wakeup_feature = ENABLED;
+ b94:	90 93 04 01 	sts	0x0104, r25
+ b98:	29 c0       	rjmp	.+82     	; 0xbec <usb_process_request+0x316>
+      case USB_SETUP_SET_STAND_INTERFACE:
+      return FALSE;                    // Unknow request
+      break;
+
+      case USB_SETUP_SET_STAND_ENDPOINT:
+      wValue   = Usb_read_byte();
+ b9a:	80 91 f1 00 	lds	r24, 0x00F1
+      dummy    = Usb_read_byte();                //!< dummy read
+ b9e:	90 91 f1 00 	lds	r25, 0x00F1
+      if (wValue != FEATURE_ENDPOINT_HALT)
+ ba2:	81 11       	cpse	r24, r1
+ ba4:	a8 c0       	rjmp	.+336    	; 0xcf6 <usb_process_request+0x420>
+         return FALSE;                 // Unknow request
+      wIndex = (Usb_read_byte() & MSK_EP_DIR);
+ ba6:	e0 91 f1 00 	lds	r30, 0x00F1
+ baa:	ef 77       	andi	r30, 0x7F	; 127
+      if (wIndex == EP_CONTROL)
+ bac:	51 f4       	brne	.+20     	; 0xbc2 <usb_process_request+0x2ec>
+      {
+         Usb_enable_stall_handshake();
+ bae:	80 91 eb 00 	lds	r24, 0x00EB
+ bb2:	80 62       	ori	r24, 0x20	; 32
+ bb4:	80 93 eb 00 	sts	0x00EB, r24
+         Usb_ack_receive_setup();
+ bb8:	80 91 e8 00 	lds	r24, 0x00E8
+ bbc:	87 7f       	andi	r24, 0xF7	; 247
+ bbe:	80 93 e8 00 	sts	0x00E8, r24
+      }
+      Usb_select_endpoint(wIndex);
+ bc2:	e0 93 e9 00 	sts	0x00E9, r30
+      if( !Is_usb_endpoint_enabled())
+ bc6:	80 91 eb 00 	lds	r24, 0x00EB
+ bca:	80 fd       	sbrc	r24, 0
+ bcc:	03 c0       	rjmp	.+6      	; 0xbd4 <usb_process_request+0x2fe>
+      {
+         Usb_select_endpoint(EP_CONTROL);
+ bce:	10 92 e9 00 	sts	0x00E9, r1
+ bd2:	91 c0       	rjmp	.+290    	; 0xcf6 <usb_process_request+0x420>
+         return FALSE;              // Invalid request
+      }
+      Usb_enable_stall_handshake();
+ bd4:	80 91 eb 00 	lds	r24, 0x00EB
+ bd8:	80 62       	ori	r24, 0x20	; 32
+ bda:	80 93 eb 00 	sts	0x00EB, r24
+      Usb_select_endpoint(EP_CONTROL);
+ bde:	10 92 e9 00 	sts	0x00E9, r1
+      endpoint_status[wIndex] = 0x01;
+ be2:	f0 e0       	ldi	r31, 0x00	; 0
+ be4:	e0 5f       	subi	r30, 0xF0	; 240
+ be6:	fe 4f       	sbci	r31, 0xFE	; 254
+ be8:	81 e0       	ldi	r24, 0x01	; 1
+ bea:	80 83       	st	Z, r24
+      Usb_ack_receive_setup();
+ bec:	80 91 e8 00 	lds	r24, 0x00E8
+ bf0:	87 7f       	andi	r24, 0xF7	; 247
+ bf2:	80 93 e8 00 	sts	0x00E8, r24
+      Usb_send_control_in();
+ bf6:	80 91 e8 00 	lds	r24, 0x00E8
+ bfa:	8e 7f       	andi	r24, 0xFE	; 254
+ bfc:	3e cf       	rjmp	.-388    	; 0xa7a <usb_process_request+0x1a4>
+Bool usb_get_status( U8 bmRequestType )
+{
+   U8 wIndex;
+   U8 dummy;
+
+   dummy    = Usb_read_byte();                 //!< dummy read
+ bfe:	80 91 f1 00 	lds	r24, 0x00F1
+   dummy    = Usb_read_byte();                 //!< dummy read
+ c02:	80 91 f1 00 	lds	r24, 0x00F1
+   wIndex   = Usb_read_byte();
+ c06:	e0 91 f1 00 	lds	r30, 0x00F1
+
+   switch(bmRequestType)
+ c0a:	11 38       	cpi	r17, 0x81	; 129
+ c0c:	69 f0       	breq	.+26     	; 0xc28 <usb_process_request+0x352>
+ c0e:	12 38       	cpi	r17, 0x82	; 130
+ c10:	99 f0       	breq	.+38     	; 0xc38 <usb_process_request+0x362>
+ c12:	10 38       	cpi	r17, 0x80	; 128
+ c14:	09 f0       	breq	.+2      	; 0xc18 <usb_process_request+0x342>
+ c16:	6f c0       	rjmp	.+222    	; 0xcf6 <usb_process_request+0x420>
+   {
+      case USB_SETUP_GET_STAND_DEVICE:
+      Usb_ack_receive_setup();
+ c18:	80 91 e8 00 	lds	r24, 0x00E8
+ c1c:	87 7f       	andi	r24, 0xF7	; 247
+ c1e:	80 93 e8 00 	sts	0x00E8, r24
+      Usb_write_byte(device_status);
+ c22:	80 91 03 01 	lds	r24, 0x0103
+ c26:	12 c0       	rjmp	.+36     	; 0xc4c <usb_process_request+0x376>
+      break;
+
+      case USB_SETUP_GET_STAND_INTERFACE:
+      Usb_ack_receive_setup();
+ c28:	80 91 e8 00 	lds	r24, 0x00E8
+ c2c:	87 7f       	andi	r24, 0xF7	; 247
+ c2e:	80 93 e8 00 	sts	0x00E8, r24
+      Usb_write_byte(0);      // Reserved - always 0
+ c32:	10 92 f1 00 	sts	0x00F1, r1
+ c36:	0c c0       	rjmp	.+24     	; 0xc50 <usb_process_request+0x37a>
+      break;
+
+      case USB_SETUP_GET_STAND_ENDPOINT:
+      Usb_ack_receive_setup();
+ c38:	80 91 e8 00 	lds	r24, 0x00E8
+ c3c:	87 7f       	andi	r24, 0xF7	; 247
+ c3e:	80 93 e8 00 	sts	0x00E8, r24
+      wIndex = wIndex & MSK_EP_DIR;
+ c42:	ef 77       	andi	r30, 0x7F	; 127
+      Usb_write_byte( endpoint_status[wIndex] );
+ c44:	f0 e0       	ldi	r31, 0x00	; 0
+ c46:	e0 5f       	subi	r30, 0xF0	; 240
+ c48:	fe 4f       	sbci	r31, 0xFE	; 254
+ c4a:	80 81       	ld	r24, Z
+ c4c:	80 93 f1 00 	sts	0x00F1, r24
+      break;
+    
+      default:
+      return FALSE;
+   }
+   Usb_write_byte(0);
+ c50:	10 92 f1 00 	sts	0x00F1, r1
+
+   Usb_send_control_in();
+ c54:	80 91 e8 00 	lds	r24, 0x00E8
+ c58:	8e 7f       	andi	r24, 0xFE	; 254
+ c5a:	80 93 e8 00 	sts	0x00E8, r24
+   while( !Is_usb_receive_out() );
+ c5e:	80 91 e8 00 	lds	r24, 0x00E8
+ c62:	82 ff       	sbrs	r24, 2
+ c64:	fc cf       	rjmp	.-8      	; 0xc5e <usb_process_request+0x388>
+ c66:	01 cf       	rjmp	.-510    	; 0xa6a <usb_process_request+0x194>
+      if (usb_get_status(bmRequestType))
+         return;
+      break;
+
+      case SETUP_GET_INTERFACE:
+      if (USB_SETUP_GET_STAND_INTERFACE == bmRequestType)
+ c68:	11 38       	cpi	r17, 0x81	; 129
+ c6a:	09 f0       	breq	.+2      	; 0xc6e <usb_process_request+0x398>
+ c6c:	44 c0       	rjmp	.+136    	; 0xcf6 <usb_process_request+0x420>
+   U16   wInterface;
+   U8    wValue_msb;
+   U8    wValue_lsb;
+
+   // Read wValue
+   wValue_lsb = Usb_read_byte();
+ c6e:	80 91 f1 00 	lds	r24, 0x00F1
+   wValue_msb = Usb_read_byte();
+ c72:	80 91 f1 00 	lds	r24, 0x00F1
+   // wValue = Alternate Setting
+   // wIndex = Interface
+   LSB(wInterface)=Usb_read_byte();
+ c76:	90 91 f1 00 	lds	r25, 0x00F1
+ c7a:	99 83       	std	Y+1, r25	; 0x01
+   MSB(wInterface)=Usb_read_byte();
+ c7c:	90 91 f1 00 	lds	r25, 0x00F1
+ c80:	9a 83       	std	Y+2, r25	; 0x02
+   if( (0!=wValue_msb) || (0!=wValue_msb) )
+ c82:	81 11       	cpse	r24, r1
+ c84:	38 c0       	rjmp	.+112    	; 0xcf6 <usb_process_request+0x420>
+      return FALSE;
+   Usb_ack_receive_setup();
+ c86:	80 91 e8 00 	lds	r24, 0x00E8
+ c8a:	87 7f       	andi	r24, 0xF7	; 247
+ c8c:	80 93 e8 00 	sts	0x00E8, r24
+   
+   Usb_write_byte( usb_user_interface_get(wInterface) );
+ c90:	89 81       	ldd	r24, Y+1	; 0x01
+ c92:	9a 81       	ldd	r25, Y+2	; 0x02
+ c94:	0e 94 8d 02 	call	0x51a	; 0x51a <usb_user_interface_get>
+ c98:	80 93 f1 00 	sts	0x00F1, r24
+   Usb_send_control_in();
+ c9c:	80 91 e8 00 	lds	r24, 0x00E8
+ ca0:	8e 7f       	andi	r24, 0xFE	; 254
+ ca2:	80 93 e8 00 	sts	0x00E8, r24
+
+   while( !Is_usb_receive_out() );
+ ca6:	80 91 e8 00 	lds	r24, 0x00E8
+ caa:	82 ff       	sbrs	r24, 2
+ cac:	fc cf       	rjmp	.-8      	; 0xca6 <usb_process_request+0x3d0>
+ cae:	dd ce       	rjmp	.-582    	; 0xa6a <usb_process_request+0x194>
+            return;
+      }
+      break;
+
+      case SETUP_SET_INTERFACE:
+      if (bmRequestType == USB_SETUP_SET_STAND_INTERFACE)
+ cb0:	11 30       	cpi	r17, 0x01	; 1
+ cb2:	09 f5       	brne	.+66     	; 0xcf6 <usb_process_request+0x420>
+   U16   wInterface;
+   U8    wValue_msb;
+   U8    wValue_lsb;
+
+   // Read wValue
+   wValue_lsb = Usb_read_byte();
+ cb4:	60 91 f1 00 	lds	r22, 0x00F1
+   wValue_msb = Usb_read_byte();
+ cb8:	80 91 f1 00 	lds	r24, 0x00F1
+   // wValue = Alternate Setting
+   // wIndex = Interface
+   LSB(wInterface)=Usb_read_byte();
+ cbc:	90 91 f1 00 	lds	r25, 0x00F1
+ cc0:	99 83       	std	Y+1, r25	; 0x01
+   MSB(wInterface)=Usb_read_byte();
+ cc2:	90 91 f1 00 	lds	r25, 0x00F1
+ cc6:	9a 83       	std	Y+2, r25	; 0x02
+   if( 0!=wValue_msb )
+ cc8:	81 11       	cpse	r24, r1
+ cca:	15 c0       	rjmp	.+42     	; 0xcf6 <usb_process_request+0x420>
+      return FALSE;
+   Usb_ack_receive_setup();
+ ccc:	80 91 e8 00 	lds	r24, 0x00E8
+ cd0:	87 7f       	andi	r24, 0xF7	; 247
+ cd2:	80 93 e8 00 	sts	0x00E8, r24
+   
+   usb_user_interface_reset(wInterface, wValue_lsb);
+ cd6:	89 81       	ldd	r24, Y+1	; 0x01
+ cd8:	9a 81       	ldd	r25, Y+2	; 0x02
+ cda:	0e 94 8f 02 	call	0x51e	; 0x51e <usb_user_interface_reset>
+   Usb_select_endpoint(EP_CONTROL);
+ cde:	10 92 e9 00 	sts	0x00E9, r1
+            
+   Usb_send_control_in();
+ ce2:	80 91 e8 00 	lds	r24, 0x00E8
+ ce6:	8e 7f       	andi	r24, 0xFE	; 254
+ ce8:	80 93 e8 00 	sts	0x00E8, r24
+   while(!Is_usb_in_ready());
+ cec:	80 91 e8 00 	lds	r24, 0x00E8
+ cf0:	80 ff       	sbrs	r24, 0
+ cf2:	fc cf       	rjmp	.-8      	; 0xcec <usb_process_request+0x416>
+ cf4:	13 c0       	rjmp	.+38     	; 0xd1c <usb_process_request+0x446>
+      default:
+      break;
+   }
+
+   // un-supported like standard request => call to user read request
+   if( !usb_user_read_request(bmRequestType, bmRequest) )
+ cf6:	60 2f       	mov	r22, r16
+ cf8:	81 2f       	mov	r24, r17
+ cfa:	0e 94 3f 04 	call	0x87e	; 0x87e <usb_user_read_request>
+ cfe:	81 11       	cpse	r24, r1
+ d00:	0d c0       	rjmp	.+26     	; 0xd1c <usb_process_request+0x446>
+   {
+      // Request unknow in the specific request list from interface
+      // keep that order (set StallRq/clear RxSetup) or a
+      // OUT request following the SETUP may be acknowledged
+      Usb_enable_stall_handshake();
+ d02:	80 91 eb 00 	lds	r24, 0x00EB
+ d06:	80 62       	ori	r24, 0x20	; 32
+ d08:	80 93 eb 00 	sts	0x00EB, r24
+      Usb_ack_receive_setup();
+ d0c:	80 91 e8 00 	lds	r24, 0x00E8
+ d10:	87 7f       	andi	r24, 0xF7	; 247
+ d12:	80 93 e8 00 	sts	0x00E8, r24
+      endpoint_status[(EP_CONTROL & MSK_EP_DIR)] = 0x01;
+ d16:	81 e0       	ldi	r24, 0x01	; 1
+ d18:	80 93 10 01 	sts	0x0110, r24
+   }
+}
+ d1c:	0f 90       	pop	r0
+ d1e:	0f 90       	pop	r0
+ d20:	df 91       	pop	r29
+ d22:	cf 91       	pop	r28
+ d24:	1f 91       	pop	r17
+ d26:	0f 91       	pop	r16
+ d28:	08 95       	ret
+
+00000d2a <usb_generate_remote_wakeup>:
+
+//! This function manages the remote wake up generation
+//!
+void usb_generate_remote_wakeup(void)
+{
+   if(Is_pll_ready()==FALSE)
+ d2a:	09 b4       	in	r0, 0x29	; 41
+ d2c:	00 fe       	sbrs	r0, 0
+ d2e:	11 c0       	rjmp	.+34     	; 0xd52 <usb_generate_remote_wakeup+0x28>
+   {
+      Pll_start_auto();
+      Wait_pll_ready();
+   }
+   Usb_unfreeze_clock();
+ d30:	80 91 d8 00 	lds	r24, 0x00D8
+ d34:	8f 7d       	andi	r24, 0xDF	; 223
+ d36:	80 93 d8 00 	sts	0x00D8, r24
+   if (remote_wakeup_feature == ENABLED)
+ d3a:	80 91 04 01 	lds	r24, 0x0104
+ d3e:	81 30       	cpi	r24, 0x01	; 1
+ d40:	71 f4       	brne	.+28     	; 0xd5e <usb_generate_remote_wakeup+0x34>
+   {
+      Usb_initiate_remote_wake_up();
+ d42:	80 91 e0 00 	lds	r24, 0x00E0
+ d46:	82 60       	ori	r24, 0x02	; 2
+ d48:	80 93 e0 00 	sts	0x00E0, r24
+      remote_wakeup_feature = DISABLED;
+ d4c:	10 92 04 01 	sts	0x0104, r1
+ d50:	06 c0       	rjmp	.+12     	; 0xd5e <usb_generate_remote_wakeup+0x34>
+//!
+void usb_generate_remote_wakeup(void)
+{
+   if(Is_pll_ready()==FALSE)
+   {
+      Pll_start_auto();
+ d52:	86 e0       	ldi	r24, 0x06	; 6
+ d54:	89 bd       	out	0x29, r24	; 41
+      Wait_pll_ready();
+ d56:	09 b4       	in	r0, 0x29	; 41
+ d58:	00 fe       	sbrs	r0, 0
+ d5a:	fd cf       	rjmp	.-6      	; 0xd56 <usb_generate_remote_wakeup+0x2c>
+ d5c:	e9 cf       	rjmp	.-46     	; 0xd30 <usb_generate_remote_wakeup+0x6>
+ d5e:	08 95       	ret
+
+00000d60 <usb_task_init>:
+ *  @return none
+ */
+void usb_task_init(void)
+{
+   #if (USE_USB_PADS_REGULATOR==ENABLE)  // Otherwise assume USB PADs regulator is not used
+   Usb_enable_regulator();
+ d60:	e3 e6       	ldi	r30, 0x63	; 99
+ d62:	f0 e0       	ldi	r31, 0x00	; 0
+ d64:	80 81       	ld	r24, Z
+ d66:	8e 7f       	andi	r24, 0xFE	; 254
+ d68:	80 83       	st	Z, r24
+   #endif
+   usb_device_task_init();
+ d6a:	0c 94 08 02 	jmp	0x410	; 0x410 <usb_device_task_init>
+
+00000d6e <usb_task>:
+ *
+ *  @return none
+*/
+void usb_task(void)
+{
+   usb_device_task();
+ d6e:	0c 94 39 02 	jmp	0x472	; 0x472 <usb_device_task>
+
+00000d72 <usb_delay_ms>:
+}
+
+
+void usb_delay_ms(U8 ms)
+{
+   for(;ms;ms--)
+ d72:	88 23       	and	r24, r24
+ d74:	c1 f0       	breq	.+48     	; 0xda6 <usb_delay_ms+0x34>
+   {
+      for(delay_usb=0;delay_usb<FOSC/16;delay_usb++);
+ d76:	10 92 1c 01 	sts	0x011C, r1
+ d7a:	10 92 1b 01 	sts	0x011B, r1
+ d7e:	20 91 1b 01 	lds	r18, 0x011B
+ d82:	30 91 1c 01 	lds	r19, 0x011C
+ d86:	28 3e       	cpi	r18, 0xE8	; 232
+ d88:	33 40       	sbci	r19, 0x03	; 3
+ d8a:	58 f4       	brcc	.+22     	; 0xda2 <usb_delay_ms+0x30>
+ d8c:	20 91 1b 01 	lds	r18, 0x011B
+ d90:	30 91 1c 01 	lds	r19, 0x011C
+ d94:	2f 5f       	subi	r18, 0xFF	; 255
+ d96:	3f 4f       	sbci	r19, 0xFF	; 255
+ d98:	30 93 1c 01 	sts	0x011C, r19
+ d9c:	20 93 1b 01 	sts	0x011B, r18
+ da0:	ee cf       	rjmp	.-36     	; 0xd7e <usb_delay_ms+0xc>
+}
+
+
+void usb_delay_ms(U8 ms)
+{
+   for(;ms;ms--)
+ da2:	81 50       	subi	r24, 0x01	; 1
+ da4:	e6 cf       	rjmp	.-52     	; 0xd72 <usb_delay_ms>
+   {
+      for(delay_usb=0;delay_usb<FOSC/16;delay_usb++);
+   }
+}
+ da6:	08 95       	ret
+
+00000da8 <__vector_11>:
+ ISR(USB_GEN_vect)
+#else
+#pragma vector = USB_General_vect
+__interrupt void usb_general_interrupt()
+#endif
+{
+ da8:	1f 92       	push	r1
+ daa:	0f 92       	push	r0
+ dac:	0f b6       	in	r0, 0x3f	; 63
+ dae:	0f 92       	push	r0
+ db0:	11 24       	eor	r1, r1
+ db2:	2f 93       	push	r18
+ db4:	3f 93       	push	r19
+ db6:	4f 93       	push	r20
+ db8:	5f 93       	push	r21
+ dba:	6f 93       	push	r22
+ dbc:	7f 93       	push	r23
+ dbe:	8f 93       	push	r24
+ dc0:	9f 93       	push	r25
+ dc2:	af 93       	push	r26
+ dc4:	bf 93       	push	r27
+ dc6:	ef 93       	push	r30
+ dc8:	ff 93       	push	r31
+  // - Device start of frame received
+   if (Is_usb_sof() && Is_sof_interrupt_enabled())
+ dca:	80 91 e1 00 	lds	r24, 0x00E1
+ dce:	82 ff       	sbrs	r24, 2
+ dd0:	09 c0       	rjmp	.+18     	; 0xde4 <__vector_11+0x3c>
+ dd2:	80 91 e2 00 	lds	r24, 0x00E2
+ dd6:	82 ff       	sbrs	r24, 2
+ dd8:	05 c0       	rjmp	.+10     	; 0xde4 <__vector_11+0x3c>
+   {
+      Usb_ack_sof();
+ dda:	8b ef       	ldi	r24, 0xFB	; 251
+ ddc:	80 93 e1 00 	sts	0x00E1, r24
+      Usb_sof_action();
+ de0:	0e 94 de 01 	call	0x3bc	; 0x3bc <sof_action>
+   }
+  // - Device Suspend event (no more USB activity detected)
+   if (Is_usb_suspend() && Is_suspend_interrupt_enabled())
+ de4:	80 91 e1 00 	lds	r24, 0x00E1
+ de8:	80 ff       	sbrs	r24, 0
+ dea:	2b c0       	rjmp	.+86     	; 0xe42 <__vector_11+0x9a>
+ dec:	80 91 e2 00 	lds	r24, 0x00E2
+ df0:	80 ff       	sbrs	r24, 0
+ df2:	27 c0       	rjmp	.+78     	; 0xe42 <__vector_11+0x9a>
+   {
+      usb_suspended=TRUE;
+ df4:	81 e0       	ldi	r24, 0x01	; 1
+ df6:	80 93 00 01 	sts	0x0100, r24
+      Usb_ack_wake_up();                 // clear wake up to detect next event
+ dfa:	8f ee       	ldi	r24, 0xEF	; 239
+ dfc:	80 93 e1 00 	sts	0x00E1, r24
+      Usb_send_event(EVT_USB_SUSPEND);
+ e00:	80 91 05 01 	lds	r24, 0x0105
+ e04:	90 91 06 01 	lds	r25, 0x0106
+ e08:	80 62       	ori	r24, 0x20	; 32
+ e0a:	90 93 06 01 	sts	0x0106, r25
+ e0e:	80 93 05 01 	sts	0x0105, r24
+      Usb_ack_suspend();
+ e12:	8e ef       	ldi	r24, 0xFE	; 254
+ e14:	80 93 e1 00 	sts	0x00E1, r24
+      Usb_enable_wake_up_interrupt();
+ e18:	80 91 e2 00 	lds	r24, 0x00E2
+ e1c:	80 61       	ori	r24, 0x10	; 16
+ e1e:	80 93 e2 00 	sts	0x00E2, r24
+      Usb_disable_resume_interrupt();
+ e22:	80 91 e2 00 	lds	r24, 0x00E2
+ e26:	8f 7d       	andi	r24, 0xDF	; 223
+ e28:	80 93 e2 00 	sts	0x00E2, r24
+      Usb_freeze_clock();
+ e2c:	80 91 d8 00 	lds	r24, 0x00D8
+ e30:	80 62       	ori	r24, 0x20	; 32
+ e32:	80 93 d8 00 	sts	0x00D8, r24
+      Stop_pll();
+ e36:	89 b5       	in	r24, 0x29	; 41
+ e38:	8d 7f       	andi	r24, 0xFD	; 253
+ e3a:	89 bd       	out	0x29, r24	; 41
+ e3c:	19 bc       	out	0x29, r1	; 41
+      Usb_suspend_action();
+ e3e:	0e 94 9d 01 	call	0x33a	; 0x33a <suspend_action>
+   }
+  // - Wake up event (USB activity detected): Used to resume
+   if (Is_usb_wake_up() && Is_wake_up_interrupt_enabled())
+ e42:	80 91 e1 00 	lds	r24, 0x00E1
+ e46:	84 ff       	sbrs	r24, 4
+ e48:	75 c0       	rjmp	.+234    	; 0xf34 <__vector_11+0x18c>
+ e4a:	80 91 e2 00 	lds	r24, 0x00E2
+ e4e:	84 ff       	sbrs	r24, 4
+ e50:	71 c0       	rjmp	.+226    	; 0xf34 <__vector_11+0x18c>
+   {
+      if(Is_pll_ready()==FALSE)
+ e52:	09 b4       	in	r0, 0x29	; 41
+ e54:	00 fe       	sbrs	r0, 0
+ e56:	19 c0       	rjmp	.+50     	; 0xe8a <__vector_11+0xe2>
+         #else
+            Pll_start_auto();
+         #endif
+         Wait_pll_ready();
+      }
+      Usb_unfreeze_clock();
+ e58:	80 91 d8 00 	lds	r24, 0x00D8
+ e5c:	8f 7d       	andi	r24, 0xDF	; 223
+ e5e:	80 93 d8 00 	sts	0x00D8, r24
+      Usb_ack_wake_up();
+ e62:	8f ee       	ldi	r24, 0xEF	; 239
+ e64:	80 93 e1 00 	sts	0x00E1, r24
+      if(usb_suspended)
+ e68:	80 91 00 01 	lds	r24, 0x0100
+ e6c:	88 23       	and	r24, r24
+ e6e:	09 f4       	brne	.+2      	; 0xe72 <__vector_11+0xca>
+ e70:	61 c0       	rjmp	.+194    	; 0xf34 <__vector_11+0x18c>
+      {
+         Usb_enable_resume_interrupt();
+ e72:	80 91 e2 00 	lds	r24, 0x00E2
+ e76:	80 62       	ori	r24, 0x20	; 32
+ e78:	80 93 e2 00 	sts	0x00E2, r24
+         Usb_enable_reset_interrupt();
+ e7c:	80 91 e2 00 	lds	r24, 0x00E2
+ e80:	88 60       	ori	r24, 0x08	; 8
+ e82:	80 93 e2 00 	sts	0x00E2, r24
+         while(Is_usb_wake_up())
+         {
+            Usb_ack_wake_up();
+ e86:	9f ee       	ldi	r25, 0xEF	; 239
+      Usb_ack_wake_up();
+      if(usb_suspended)
+      {
+         Usb_enable_resume_interrupt();
+         Usb_enable_reset_interrupt();
+         while(Is_usb_wake_up())
+ e88:	06 c0       	rjmp	.+12     	; 0xe96 <__vector_11+0xee>
+      if(Is_pll_ready()==FALSE)
+      {
+         #ifdef USE_USB_AUTOBAUD
+            usb_autobaud();
+         #else
+            Pll_start_auto();
+ e8a:	86 e0       	ldi	r24, 0x06	; 6
+ e8c:	89 bd       	out	0x29, r24	; 41
+         #endif
+         Wait_pll_ready();
+ e8e:	09 b4       	in	r0, 0x29	; 41
+ e90:	00 fe       	sbrs	r0, 0
+ e92:	fd cf       	rjmp	.-6      	; 0xe8e <__vector_11+0xe6>
+ e94:	e1 cf       	rjmp	.-62     	; 0xe58 <__vector_11+0xb0>
+      Usb_ack_wake_up();
+      if(usb_suspended)
+      {
+         Usb_enable_resume_interrupt();
+         Usb_enable_reset_interrupt();
+         while(Is_usb_wake_up())
+ e96:	80 91 e1 00 	lds	r24, 0x00E1
+ e9a:	84 ff       	sbrs	r24, 4
+ e9c:	03 c0       	rjmp	.+6      	; 0xea4 <__vector_11+0xfc>
+         {
+            Usb_ack_wake_up();
+ e9e:	90 93 e1 00 	sts	0x00E1, r25
+ ea2:	f9 cf       	rjmp	.-14     	; 0xe96 <__vector_11+0xee>
+         }
+         usb_delay_ms(2);
+ ea4:	82 e0       	ldi	r24, 0x02	; 2
+ ea6:	0e 94 b9 06 	call	0xd72	; 0xd72 <usb_delay_ms>
+         if(Is_usb_sof() || Is_usb_resume() || Is_usb_reset() )
+ eaa:	80 91 e1 00 	lds	r24, 0x00E1
+ eae:	82 fd       	sbrc	r24, 2
+ eb0:	08 c0       	rjmp	.+16     	; 0xec2 <__vector_11+0x11a>
+ eb2:	80 91 e1 00 	lds	r24, 0x00E1
+ eb6:	85 fd       	sbrc	r24, 5
+ eb8:	04 c0       	rjmp	.+8      	; 0xec2 <__vector_11+0x11a>
+ eba:	80 91 e1 00 	lds	r24, 0x00E1
+ ebe:	83 ff       	sbrs	r24, 3
+ ec0:	1c c0       	rjmp	.+56     	; 0xefa <__vector_11+0x152>
+         {
+            Usb_disable_wake_up_interrupt();
+ ec2:	80 91 e2 00 	lds	r24, 0x00E2
+ ec6:	8f 7e       	andi	r24, 0xEF	; 239
+ ec8:	80 93 e2 00 	sts	0x00E2, r24
+            Usb_wake_up_action();
+            Usb_send_event(EVT_USB_WAKE_UP);
+ ecc:	80 91 05 01 	lds	r24, 0x0105
+ ed0:	90 91 06 01 	lds	r25, 0x0106
+ ed4:	80 64       	ori	r24, 0x40	; 64
+ ed6:	90 93 06 01 	sts	0x0106, r25
+ eda:	80 93 05 01 	sts	0x0105, r24
+            Usb_enable_suspend_interrupt();
+ ede:	80 91 e2 00 	lds	r24, 0x00E2
+ ee2:	81 60       	ori	r24, 0x01	; 1
+ ee4:	80 93 e2 00 	sts	0x00E2, r24
+            Usb_enable_resume_interrupt();
+ ee8:	80 91 e2 00 	lds	r24, 0x00E2
+ eec:	80 62       	ori	r24, 0x20	; 32
+ eee:	80 93 e2 00 	sts	0x00E2, r24
+            Usb_enable_reset_interrupt();
+ ef2:	80 91 e2 00 	lds	r24, 0x00E2
+ ef6:	88 60       	ori	r24, 0x08	; 8
+ ef8:	1b c0       	rjmp	.+54     	; 0xf30 <__vector_11+0x188>
+            
+         }
+         else // Workarround to make the USB enter power down mode again (spurious transcient detected on the USB lines)
+         {
+            if(Is_usb_wake_up()) return;
+ efa:	80 91 e1 00 	lds	r24, 0x00E1
+ efe:	84 fd       	sbrc	r24, 4
+ f00:	4f c0       	rjmp	.+158    	; 0xfa0 <__vector_11+0x1f8>
+            Usb_drive_dp_low();
+ f02:	80 91 fb 00 	lds	r24, 0x00FB
+ f06:	8f 7d       	andi	r24, 0xDF	; 223
+ f08:	80 93 fb 00 	sts	0x00FB, r24
+            Usb_direct_drive_usb_enable();
+ f0c:	80 91 fb 00 	lds	r24, 0x00FB
+ f10:	80 68       	ori	r24, 0x80	; 128
+ f12:	80 93 fb 00 	sts	0x00FB, r24
+ f16:	80 91 fb 00 	lds	r24, 0x00FB
+ f1a:	8f 7b       	andi	r24, 0xBF	; 191
+ f1c:	80 93 fb 00 	sts	0x00FB, r24
+            Usb_direct_drive_disable();
+ f20:	80 91 fb 00 	lds	r24, 0x00FB
+ f24:	8f 73       	andi	r24, 0x3F	; 63
+ f26:	80 93 fb 00 	sts	0x00FB, r24
+            Usb_disable_wake_up_interrupt();
+ f2a:	80 91 e2 00 	lds	r24, 0x00E2
+ f2e:	8f 7e       	andi	r24, 0xEF	; 239
+ f30:	80 93 e2 00 	sts	0x00E2, r24
+         }
+      }
+   }
+  // - Resume state bus detection
+   if (Is_usb_resume() && Is_resume_interrupt_enabled())
+ f34:	80 91 e1 00 	lds	r24, 0x00E1
+ f38:	85 ff       	sbrs	r24, 5
+ f3a:	1c c0       	rjmp	.+56     	; 0xf74 <__vector_11+0x1cc>
+ f3c:	80 91 e2 00 	lds	r24, 0x00E2
+ f40:	85 ff       	sbrs	r24, 5
+ f42:	18 c0       	rjmp	.+48     	; 0xf74 <__vector_11+0x1cc>
+   {
+      usb_suspended = FALSE;
+ f44:	10 92 00 01 	sts	0x0100, r1
+      Usb_disable_wake_up_interrupt();
+ f48:	80 91 e2 00 	lds	r24, 0x00E2
+ f4c:	8f 7e       	andi	r24, 0xEF	; 239
+ f4e:	80 93 e2 00 	sts	0x00E2, r24
+      Usb_ack_resume();
+ f52:	8f ed       	ldi	r24, 0xDF	; 223
+ f54:	80 93 e1 00 	sts	0x00E1, r24
+      Usb_disable_resume_interrupt();
+ f58:	80 91 e2 00 	lds	r24, 0x00E2
+ f5c:	8f 7d       	andi	r24, 0xDF	; 223
+ f5e:	80 93 e2 00 	sts	0x00E2, r24
+      Usb_resume_action();
+      Usb_send_event(EVT_USB_RESUME);
+ f62:	80 91 05 01 	lds	r24, 0x0105
+ f66:	90 91 06 01 	lds	r25, 0x0106
+ f6a:	80 68       	ori	r24, 0x80	; 128
+ f6c:	90 93 06 01 	sts	0x0106, r25
+ f70:	80 93 05 01 	sts	0x0105, r24
+   }
+  // - USB bus reset detection
+   if (Is_usb_reset()&& Is_reset_interrupt_enabled())
+ f74:	80 91 e1 00 	lds	r24, 0x00E1
+ f78:	83 ff       	sbrs	r24, 3
+ f7a:	12 c0       	rjmp	.+36     	; 0xfa0 <__vector_11+0x1f8>
+ f7c:	80 91 e2 00 	lds	r24, 0x00E2
+ f80:	83 ff       	sbrs	r24, 3
+ f82:	0e c0       	rjmp	.+28     	; 0xfa0 <__vector_11+0x1f8>
+   {
+      Usb_ack_reset();
+ f84:	87 ef       	ldi	r24, 0xF7	; 247
+ f86:	80 93 e1 00 	sts	0x00E1, r24
+      usb_init_device();
+ f8a:	0e 94 78 02 	call	0x4f0	; 0x4f0 <usb_init_device>
+      Usb_reset_action();
+      Usb_send_event(EVT_USB_RESET);
+ f8e:	80 91 05 01 	lds	r24, 0x0105
+ f92:	90 91 06 01 	lds	r25, 0x0106
+ f96:	91 60       	ori	r25, 0x01	; 1
+ f98:	90 93 06 01 	sts	0x0106, r25
+ f9c:	80 93 05 01 	sts	0x0105, r24
+   }
+
+}
+ fa0:	ff 91       	pop	r31
+ fa2:	ef 91       	pop	r30
+ fa4:	bf 91       	pop	r27
+ fa6:	af 91       	pop	r26
+ fa8:	9f 91       	pop	r25
+ faa:	8f 91       	pop	r24
+ fac:	7f 91       	pop	r23
+ fae:	6f 91       	pop	r22
+ fb0:	5f 91       	pop	r21
+ fb2:	4f 91       	pop	r20
+ fb4:	3f 91       	pop	r19
+ fb6:	2f 91       	pop	r18
+ fb8:	0f 90       	pop	r0
+ fba:	0f be       	out	0x3f, r0	; 63
+ fbc:	0f 90       	pop	r0
+ fbe:	1f 90       	pop	r1
+ fc0:	18 95       	reti
+
+00000fc2 <wdtdrv_disable>:
+   // Ignored if IAR compiler optimization option "Always do cross call optimization" is enabled
+   #pragma optimize=none 
+#endif
+void wdtdrv_disable(void)
+{
+   U8 save_int=Get_interrupt_state();
+ fc2:	8f b7       	in	r24, 0x3f	; 63
+   Disable_interrupt();
+ fc4:	f8 94       	cli
+#ifdef  __GNUC__
+   Ack_wdt_reset();
+ fc6:	97 ef       	ldi	r25, 0xF7	; 247
+ fc8:	94 bf       	out	0x34, r25	; 52
+		);
+	}
+	else
+	{
+        uint8_t register temp_reg;
+		__asm__ __volatile__ (
+ fca:	0f b6       	in	r0, 0x3f	; 63
+ fcc:	f8 94       	cli
+ fce:	a8 95       	wdr
+ fd0:	90 91 60 00 	lds	r25, 0x0060
+ fd4:	98 61       	ori	r25, 0x18	; 24
+ fd6:	90 93 60 00 	sts	0x0060, r25
+ fda:	10 92 60 00 	sts	0x0060, r1
+ fde:	0f be       	out	0x3f, r0	; 63
+   Ack_wdt_reset();
+   Wdt_reset_instruction();
+   WDTCSR = (1<<WDCE) | (1<<WDE);
+   WDTCSR = 0x00;
+#endif
+   if(save_int) { Enable_interrupt(); }
+ fe0:	87 ff       	sbrs	r24, 7
+ fe2:	01 c0       	rjmp	.+2      	; 0xfe6 <wdtdrv_disable+0x24>
+ fe4:	78 94       	sei
+ fe6:	08 95       	ret
+
+00000fe8 <__tablejump2__>:
+ fe8:	ee 0f       	add	r30, r30
+ fea:	ff 1f       	adc	r31, r31
+ fec:	05 90       	lpm	r0, Z+
+ fee:	f4 91       	lpm	r31, Z
+ ff0:	e0 2d       	mov	r30, r0
+ ff2:	09 94       	ijmp
+
+00000ff4 <_exit>:
+ ff4:	f8 94       	cli
+
+00000ff6 <__stop_program>:
+ ff6:	ff cf       	rjmp	.-2      	; 0xff6 <__stop_program>
